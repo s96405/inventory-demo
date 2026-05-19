@@ -1,6 +1,9 @@
 // 功能：仿 Excel 製程追蹤表
-// 1. 顯示全部欄位 / 只顯示有數量欄位 / 只顯示 NG 欄位
+
+// 1. 顯示全部欄位 / 未加工餘料欄位 / NG不良欄位
+
 // 2. 搜尋後重新計算目前篩選結果總數
+
 // 3. 不加入系統判斷欄位，只顯示 Excel 轉出的資料
 
 let allRows = [];
@@ -238,40 +241,32 @@ function getVisibleColumns(rows) {
     return FRONTEND_COLUMNS;
   }
 
-  if (mode === "ng") {
+  // 未加工 / 餘料：顯示固定欄位 + 非 NG 的待處理數量欄位 + 直通率
+  if (mode === "remain") {
     return FRONTEND_COLUMNS.filter(function (column) {
-      return column.fixed || column.ng || column.key === "yield_rate";
+      if (column.fixed) {
+        return true;
+        }
+
+      if (column.ng) {
+        return false;
+      }
+
+      if (column.type !== "number") {
+        return true;
+      }
+
+      return rows.some(function (row) {
+        return Number(row[column.key]) !== 0;
+      });
     });
   }
 
-  if (mode === "nonzero") {
-  return FRONTEND_COLUMNS.filter(function (column) {
-    // 固定欄位永遠顯示：來料日期、製令單號
-    if (column.fixed) {
-      return true;
-    }
-
-    // 直通率保留
-    if (column.key === "yield_rate") {
-      return true;
-    }
-
-    // 入料數保留顯示，但不要拿來影響「有數量欄位」判斷
-    if (column.key === "input_qty") {
-      return false;
-    }
-
-    // 文字欄位，例如廠商，保留
-    if (column.type !== "number") {
-      return true;
-    }
-
-    // 其他數量欄位，有任一筆不是 0 才顯示
-    return rows.some(function (row) {
-      return Number(row[column.key]) !== 0;
+  if (mode === "ng") {
+    return FRONTEND_COLUMNS.filter(function (column) {
+      return column.fixed || column.ng;
     });
-  });
-}
+  }
 
   return FRONTEND_COLUMNS;
 }
