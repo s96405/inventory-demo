@@ -223,7 +223,7 @@ body {
 }
 
 .excel-table .number {
-    text-align: right;
+    text-align: center;
 }
 
 .excel-table .ng {
@@ -375,6 +375,8 @@ body {
     color: #64748b;
     padding: 24px;
 }
+
+
 
 /* 手機版 */
 @media (max-width: 700px) {
