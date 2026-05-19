@@ -1,5 +1,11 @@
 // js/index.js
-// 功能：把 JSON 畫成接近 Excel 的多層表格
+// 功能：把 JSON 畫成接近 Excel 的多層製程追蹤表
+// 重點：
+// 1. 第 1 列：製程大分類
+// 2. 第 2 列：料號 / 製程說明，使用 colspan 合併
+// 3. 第 3 列：製程總數
+// 4. 第 4 列：欄位名稱
+// 5. tbody：每筆製令資料
 
 let allRows = [];
 let tableData = null;
@@ -8,6 +14,10 @@ const tableHead = document.querySelector("#tableHead");
 const tableBody = document.querySelector("#tableBody");
 const searchWorkOrder = document.querySelector("#searchWorkOrder");
 const resetBtn = document.querySelector("#resetBtn");
+
+// =========================
+// 載入 JSON
+// =========================
 
 fetch("./data/inventory_demo.json")
   .then(function (response) {
@@ -30,6 +40,9 @@ fetch("./data/inventory_demo.json")
     `;
   });
 
+// =========================
+// 產生 Excel 表頭
+// =========================
 
 function renderExcelHead(data) {
   const groups = data.header_groups || [];
@@ -38,6 +51,9 @@ function renderExcelHead(data) {
 
   let html = "";
 
+  // =========================
+  // 第 1 列：製程大分類
+  // =========================
   html += `<tr>`;
 
   groups.forEach(function (group) {
@@ -50,22 +66,39 @@ function renderExcelHead(data) {
 
   html += `</tr>`;
 
+  // =========================
+  // 第 2 列：料號 / 製程說明
+  // 這裡用 colspan 合併，讓它更像 Excel
+  // 欄位總數必須跟 columns 數量一致：目前 21 欄
+  // =========================
+  html += `
+    <tr>
+      <th class="header-label"></th>
+      <th class="header-label"></th>
+      <th class="header-label">30-4118-018-XX</th>
+      <th class="header-label">30-4118-018-XX</th>
+      <th class="header-label">30-4118-018-XXX#1</th>
 
-  html += `<tr>`;
+      <th class="header-label" colspan="2">30-4118-018-XXX--#1-1</th>
 
-  columns.forEach(function (column) {
-    const itemText = getSecondHeaderText(column.key);
+      <th class="header-label" colspan="2">30-4118-018-XXX--#1-2</th>
 
-    html += `
-      <th class="header-label">
-        ${escapeHtml(itemText)}
-      </th>
-    `;
-  });
+      <th class="header-label" colspan="2">30-4118-018-XXX</th>
 
-  html += `</tr>`;
+      <th class="header-label" colspan="4">30-4118-018-000--#2</th>
 
+      <th class="header-label" colspan="2">30-4118-018-XXX</th>
 
+      <th class="header-label"></th>
+      <th class="header-label"></th>
+      <th class="header-label"></th>
+      <th class="header-label"></th>
+    </tr>
+  `;
+
+  // =========================
+  // 第 3 列：製程總數
+  // =========================
   html += `<tr>`;
 
   columns.forEach(function (column) {
@@ -86,7 +119,9 @@ function renderExcelHead(data) {
 
   html += `</tr>`;
 
-
+  // =========================
+  // 第 4 列：欄位名稱
+  // =========================
   html += `<tr>`;
 
   columns.forEach(function (column) {
@@ -102,6 +137,9 @@ function renderExcelHead(data) {
   tableHead.innerHTML = html;
 }
 
+// =========================
+// 產生表格資料
+// =========================
 
 function renderExcelBody(rows, columns) {
   if (rows.length === 0) {
@@ -153,6 +191,9 @@ function renderExcelBody(rows, columns) {
   tableBody.innerHTML = html;
 }
 
+// =========================
+// 搜尋功能
+// =========================
 
 function filterData() {
   const keyword = searchWorkOrder.value.trim().toLowerCase();
@@ -166,41 +207,18 @@ function filterData() {
   renderExcelBody(filteredRows, tableData.columns || []);
 }
 
+// =========================
+// 清除條件
+// =========================
 
 function resetFilter() {
   searchWorkOrder.value = "";
   renderExcelBody(allRows, tableData.columns || []);
 }
 
-
-function getSecondHeaderText(key) {
-  const map = {
-    date: "",
-    work_order: "",
-    input_qty: "30-4118-018-XXX",
-    incoming_wait_qc: "30-4118-018-XX",
-    wait_issue_qty: "30-4118-018-XXX#1",
-    process_1_1_qty: "30-4118-018-XXX--#1-1",
-    process_1_1_ng: "",
-    process_1_2_qty: "30-4118-018-XXX--#1-2",
-    process_1_2_ng: "",
-    wait_qc_01: "30-4118-018-XXX",
-    ng_01: "",
-    wait_outsource_qty: "30-4118-018-000--#2",
-    vendor: "",
-    outsource_wait_return_qty: "",
-    outsource_ng: "",
-    wait_qc_02: "30-4118-018-XXX",
-    ng_02: "",
-    not_stock_in_qty: "",
-    not_allocated_qty: "",
-    bad_qty: "",
-    yield_rate: "",
-  };
-
-  return map[key] || "";
-}
-
+// =========================
+// 格式化資料
+// =========================
 
 function formatCellValue(value, column) {
   if (column.key === "yield_rate") {
@@ -214,13 +232,11 @@ function formatCellValue(value, column) {
   return escapeHtml(value);
 }
 
-
 function formatNumber(value) {
   const number = Number(value) || 0;
 
   return number.toLocaleString("zh-TW");
 }
-
 
 function formatYield(value) {
   const number = Number(value) || 0;
@@ -229,13 +245,13 @@ function formatYield(value) {
     return "-";
   }
 
+  // Excel 如果讀出 0.9966，代表 99.66%
   if (number <= 1) {
     return `${(number * 100).toFixed(2)}%`;
   }
 
   return `${number.toFixed(2)}%`;
 }
-
 
 function getYieldClass(value) {
   const number = Number(value) || 0;
@@ -252,16 +268,13 @@ function getYieldClass(value) {
   return "rate-bad";
 }
 
-
 function isNgColumn(key) {
   return key.toLowerCase().includes("ng") || key === "bad_qty";
 }
 
-
 function formatMultiLine(text) {
   return escapeHtml(text).replaceAll("\n", "<br>");
 }
-
 
 function escapeHtml(value) {
   return String(value || "")
@@ -272,6 +285,9 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
+// =========================
+// 綁定事件
+// =========================
 
 searchWorkOrder.addEventListener("input", filterData);
 resetBtn.addEventListener("click", resetFilter);
