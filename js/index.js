@@ -220,6 +220,10 @@ function renderPage() {
   const filteredRows = getFilteredRows();
   const visibleColumns = getVisibleColumns(filteredRows);
 
+  document
+    .querySelector(".excel-table")
+    .classList.toggle("compact-table", columnMode.value === "remain");
+
   renderExcelHead(filteredRows, visibleColumns);
   renderExcelBody(filteredRows, visibleColumns);
 }
@@ -241,26 +245,31 @@ function getVisibleColumns(rows) {
     return FRONTEND_COLUMNS;
   }
 
-  // 未加工 / 餘料：顯示固定欄位 + 非 NG 的待處理數量欄位 + 直通率
   if (mode === "remain") {
-    return FRONTEND_COLUMNS.filter(function (column) {
-      if (column.fixed) {
-        return true;
-        }
+  return FRONTEND_COLUMNS.filter(function (column) {
+    if (column.fixed) {
+      return true;
+    }
 
-      if (column.ng) {
-        return false;
-      }
+    if (column.key === "vendor") {
+      return true;
+    }
 
-      if (column.type !== "number") {
-        return true;
-      }
+    if (column.ng) {
+      return false;
+    }
 
-      return rows.some(function (row) {
-        return Number(row[column.key]) !== 0;
-      });
+    const isRemainColumn = column.label.includes("未加工");
+
+    if (!isRemainColumn) {
+      return false;
+    }
+
+    return rows.some(function (row) {
+      return Number(row[column.key]) > 0;
     });
-  }
+  });
+}
 
   if (mode === "ng") {
     return FRONTEND_COLUMNS.filter(function (column) {
@@ -426,6 +435,14 @@ function renderExcelBody(rows, columns) {
       if (column.ng) {
         className += " ng";
       }
+        
+      if (
+        columnMode.value === "remain" &&
+        column.type === "number" &&
+        Number(value) > 0
+        ) {
+        className += " has-qty";
+        }
 
       if (key === "work_order") {
         className += " work-order-cell";

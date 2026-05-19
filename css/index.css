@@ -127,6 +127,37 @@ body {
     table-layout: auto;
 }
 
+/* 未加工 / 餘料模式：欄位少時自動填滿畫面 */
+.excel-table.compact-table {
+    min-width: 100%;
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* compact 模式不要每欄都固定最小 110px，讓欄位平均分配 */
+.excel-table.compact-table th,
+.excel-table.compact-table td {
+    min-width: auto;
+}
+
+/* compact 模式下，前兩欄仍然固定 */
+.excel-table.compact-table th:nth-child(1),
+.excel-table.compact-table td:nth-child(1) {
+    min-width: 140px;
+    width: 140px;
+}
+
+.excel-table.compact-table th:nth-child(2),
+.excel-table.compact-table td:nth-child(2) {
+    min-width: 180px;
+    width: 180px;
+}
+
+/* 未加工餘料模式欄位少時，不要撐到 2600px */
+.excel-table.compact-table {
+    min-width: max-content;
+}
+
 .excel-table th,
 .excel-table td {
     border-right: 1px solid #111827;
@@ -186,7 +217,9 @@ body {
 }
 
 .excel-table tbody tr:hover td {
-    background: #fef9c3;
+
+    background: #dbeafe;
+
 }
 
 .excel-table .number {
@@ -234,7 +267,9 @@ body {
 
 .excel-table tbody tr:hover td:nth-child(1),
 .excel-table tbody tr:hover td:nth-child(2) {
-    background: #fef9c3;
+
+    background: #dbeafe;
+
 }
 
 /* 製令欄仿 Excel 綠底 */
@@ -244,6 +279,17 @@ body {
     color: #111827;
 }
 
+/* 未加工餘料模式：有數量的欄位加底色 */
+.excel-table tbody td.has-qty {
+    background-color: #fff3cd !important;
+    color: #7a4b00;
+    font-weight: 800;
+}
+
+.excel-table tbody tr:hover td.has-qty {
+    background-color: #f59e0b !important;
+    color: #ffffff;
+}
 
 /* 直通率顏色 */
 .rate-good {
@@ -305,8 +351,6 @@ body {
     background: #70ad47;
     color: #ffffff;
 }
-
-
 
 .header-label {
     background: #d9eaf7;
