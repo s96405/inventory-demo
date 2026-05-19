@@ -5,69 +5,43 @@
 body {
     margin: 0;
     font-family: "Microsoft JhengHei", Arial, sans-serif;
-    background: #f3f6fa;
-    color: #1f2937;
+    background: #eef2f7;
+    color: #111827;
 }
 
 .page {
     width: 100%;
-    max-width: 1440px;
+    max-width: 1800px;
     margin: 0 auto;
-    padding: 28px;
+    padding: 24px;
 }
 
 .page-header {
-    margin-bottom: 24px;
+    margin-bottom: 18px;
 }
 
 .page-header h1 {
-    margin: 0 0 8px;
-    font-size: 32px;
+    margin: 0 0 6px;
+    font-size: 28px;
     font-weight: 800;
-    color: #111827;
 }
 
 .page-header p {
     margin: 0;
-    font-size: 15px;
     color: #64748b;
-}
-
-.summary-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    margin-bottom: 20px;
-}
-
-.summary-card {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
-}
-
-.summary-card p {
-    margin: 0 0 10px;
     font-size: 14px;
-    color: #64748b;
 }
 
-.summary-card strong {
-    font-size: 30px;
-    font-weight: 800;
-    color: #0f172a;
-}
-
+/* 查詢區 */
 .toolbar {
     display: flex;
     align-items: flex-end;
-    gap: 14px;
+    gap: 12px;
     background: #ffffff;
-    padding: 18px;
-    border-radius: 16px;
-    margin-bottom: 20px;
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
 }
 
 .search-group {
@@ -78,33 +52,32 @@ body {
 
 .search-group label {
     font-size: 13px;
-    color: #475569;
     font-weight: 700;
+    color: #475569;
 }
 
 .search-group input {
-    width: 260px;
-    height: 42px;
-    padding: 0 12px;
+    width: 280px;
+    height: 38px;
     border: 1px solid #cbd5e1;
-    border-radius: 10px;
+    border-radius: 8px;
+    padding: 0 10px;
     font-size: 14px;
-    outline: none;
 }
 
 .search-group input:focus {
+    outline: none;
     border-color: #2563eb;
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
 .toolbar button {
-    height: 42px;
-    padding: 0 18px;
+    height: 38px;
+    padding: 0 16px;
     border: 0;
-    border-radius: 10px;
+    border-radius: 8px;
     background: #1e293b;
     color: #ffffff;
-    font-size: 14px;
     cursor: pointer;
 }
 
@@ -112,79 +85,247 @@ body {
     background: #0f172a;
 }
 
-.table-section {
+/* Excel 區塊 */
+.excel-section {
     background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    border-radius: 12px;
     overflow: hidden;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
 }
 
-.table-header {
-    padding: 18px 20px;
-    border-bottom: 1px solid #e5e7eb;
+.excel-title {
+    padding: 14px 16px;
+    border-bottom: 1px solid #d1d5db;
 }
 
-.table-header h2 {
-    margin: 0 0 6px;
-    font-size: 20px;
+.excel-title h2 {
+    margin: 0 0 4px;
+    font-size: 18px;
 }
 
-.table-header p {
+.excel-title p {
     margin: 0;
-    font-size: 14px;
     color: #64748b;
+    font-size: 13px;
 }
 
-.table-wrapper {
+.excel-wrapper {
     width: 100%;
     overflow: auto;
+    max-height: calc(100vh - 180px);
 }
 
-table {
-    width: 100%;
-    min-width: 1180px;
-    border-collapse: collapse;
+/* 表格本體 */
+.excel-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 2600px;
+    width: max-content;
+    table-layout: auto;
 }
 
-th,
-td {
-    padding: 12px 14px;
-    border-bottom: 1px solid #e5e7eb;
-    text-align: left;
+.excel-table th,
+.excel-table td {
+    border-right: 1px solid #111827;
+    border-bottom: 1px solid #111827;
+    padding: 6px 10px;
+    font-size: 13px;
+    text-align: center;
+    vertical-align: middle;
     white-space: nowrap;
-    font-size: 14px;
+    height: 34px;
+    min-width: 110px;
 }
 
-th {
+.excel-table th:first-child,
+.excel-table td:first-child {
+    border-left: 1px solid #111827;
+}
+
+.excel-table thead tr:first-child th {
+    border-top: 1px solid #111827;
+}
+
+/* 多層表頭固定 */
+.excel-table thead th {
     position: sticky;
-    top: 0;
-    z-index: 2;
-    background: #f8fafc;
-    color: #475569;
+    z-index: 5;
     font-weight: 800;
 }
 
-td {
-    color: #1f2937;
+.excel-table thead tr:nth-child(1) th {
+    top: 0;
+    height: 54px;
 }
 
-tbody tr:hover {
-    background: #f9fafb;
+.excel-table thead tr:nth-child(2) th {
+    top: 54px;
+    height: 34px;
 }
 
+.excel-table thead tr:nth-child(3) th {
+    top: 88px;
+    height: 34px;
+}
+
+.excel-table thead tr:nth-child(4) th {
+    top: 122px;
+    height: 38px;
+}
+
+/* 表格資料 */
+.excel-table tbody td {
+    background: #ffffff;
+}
+
+.excel-table tbody tr:nth-child(even) td {
+    background: #f8fafc;
+}
+
+.excel-table tbody tr:hover td {
+    background: #fef9c3;
+}
+
+.excel-table .number {
+    text-align: right;
+}
+
+.excel-table .ng {
+    color: #dc2626;
+    font-weight: 800;
+}
+
+/* 左側固定欄：來料日期、製令單號 */
+.excel-table th:nth-child(1),
+.excel-table td:nth-child(1) {
+    position: sticky;
+    left: 0;
+    z-index: 6;
+    min-width: 120px;
+    width: 120px;
+}
+
+.excel-table th:nth-child(2),
+.excel-table td:nth-child(2) {
+    position: sticky;
+    left: 120px;
+    z-index: 6;
+    min-width: 160px;
+    width: 160px;
+}
+
+.excel-table thead th:nth-child(1),
+.excel-table thead th:nth-child(2) {
+    z-index: 12;
+}
+
+.excel-table td:nth-child(1),
+.excel-table td:nth-child(2) {
+    background: #ffffff;
+}
+
+.excel-table tbody tr:nth-child(even) td:nth-child(1),
+.excel-table tbody tr:nth-child(even) td:nth-child(2) {
+    background: #f8fafc;
+}
+
+.excel-table tbody tr:hover td:nth-child(1),
+.excel-table tbody tr:hover td:nth-child(2) {
+    background: #fef9c3;
+}
+
+/* 製令欄仿 Excel 綠底 */
+.work-order-cell {
+    background: #92d050 !important;
+    font-weight: 800;
+    color: #111827;
+}
+
+/* 直通率顏色 */
+.rate-good {
+    background: #b7e58a !important;
+    font-weight: 800;
+}
+
+.rate-warning {
+    background: #fef08a !important;
+    color: #b45309;
+    font-weight: 800;
+}
+
+.rate-bad {
+    background: #fecaca !important;
+    color: #b91c1c;
+    font-weight: 800;
+}
+
+/* Excel 表頭顏色 */
+.group-year {
+    background: #ffffff;
+}
+
+.group-material {
+    background: #ffffff;
+}
+
+.group-total {
+    background: #fff200;
+}
+
+.group-qc {
+    background: #e2f0d9;
+}
+
+.group-issue {
+    background: #4f81bd;
+    color: #ffffff;
+}
+
+.group-process {
+    background: #e2f0d9;
+}
+
+.group-outsource {
+    background: #fff2cc;
+}
+
+.group-stock {
+    background: #e2f0d9;
+}
+
+.group-ng {
+    background: #ffc000;
+}
+
+.group-rate {
+    background: #70ad47;
+    color: #ffffff;
+}
+
+.header-label {
+    background: #d9eaf7;
+}
+
+.summary-cell {
+    background: #f8fafc;
+    font-weight: 800;
+}
+
+.summary-cell.ng {
+    color: #dc2626;
+}
+
+/* 空資料 */
 .empty {
     text-align: center;
     color: #64748b;
-    padding: 32px;
+    padding: 24px;
 }
 
-@media (max-width: 900px) {
+/* 手機版 */
+@media (max-width: 700px) {
     .page {
-        padding: 18px;
-    }
-
-    .summary-cards {
-        grid-template-columns: repeat(2, 1fr);
+        padding: 14px;
     }
 
     .toolbar {
@@ -196,14 +337,8 @@ tbody tr:hover {
     .toolbar button {
         width: 100%;
     }
-}
-
-@media (max-width: 560px) {
-    .summary-cards {
-        grid-template-columns: 1fr;
-    }
 
     .page-header h1 {
-        font-size: 26px;
+        font-size: 24px;
     }
 }

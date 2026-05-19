@@ -1,91 +1,113 @@
 // js/index.js
-// 功能：讀取 Excel 轉出的 JSON，顯示庫存查詢 Demo
-// 注意：這版只顯示 Excel 裡面抓出的欄位，不額外加入自訂狀態
+// 功能：把 JSON 畫成接近 Excel 的多層表格
 
-let inventoryData = [];
+let allRows = [];
+let tableData = null;
 
-// =========================
-// 抓取 HTML 元素
-// =========================
-
+const tableHead = document.querySelector("#tableHead");
 const tableBody = document.querySelector("#tableBody");
-
 const searchWorkOrder = document.querySelector("#searchWorkOrder");
-const searchItemNo = document.querySelector("#searchItemNo");
 const resetBtn = document.querySelector("#resetBtn");
-
-const totalCount = document.querySelector("#totalCount");
-const totalInputQty = document.querySelector("#totalInputQty");
-const totalStockInQty = document.querySelector("#totalStockInQty");
-const totalBadQty = document.querySelector("#totalBadQty");
-
-
-// =========================
-// 載入 JSON 資料
-// =========================
 
 fetch("./data/inventory_demo.json")
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
-    inventoryData = data;
-    renderPage(inventoryData);
+    tableData = data;
+    allRows = data.rows || [];
+
+    renderExcelHead(data);
+    renderExcelBody(allRows, data.columns || []);
   })
   .catch(function (error) {
     console.error("讀取 JSON 失敗：", error);
 
     tableBody.innerHTML = `
       <tr>
-        <td colspan="11" class="empty">
-          讀取資料失敗，請確認 data/inventory_demo.json 是否存在
-        </td>
+        <td class="empty">讀取資料失敗，請確認 data/inventory_demo.json 是否存在</td>
       </tr>
     `;
   });
 
 
-// =========================
-// 畫面渲染
-// =========================
+function renderExcelHead(data) {
+  const groups = data.header_groups || [];
+  const columns = data.columns || [];
+  const summary = data.summary || {};
 
-function renderPage(data) {
-  renderSummaryCards(data);
-  renderTable(data);
-}
+  let html = "";
 
+  html += `<tr>`;
 
-// =========================
-// 統計卡片
-// =========================
-
-function renderSummaryCards(data) {
-  let inputTotal = 0;
-  let stockInTotal = 0;
-  let badTotal = 0;
-
-  data.forEach(function (item) {
-    inputTotal += Number(item.input_qty) || 0;
-    stockInTotal += Number(item.stock_in_qty) || 0;
-    badTotal += Number(item.bad_qty) || 0;
+  groups.forEach(function (group) {
+    html += `
+      <th class="${escapeHtml(group.className)}" colspan="${group.colspan}">
+        ${formatMultiLine(group.title)}
+      </th>
+    `;
   });
 
-  totalCount.textContent = formatNumber(data.length);
-  totalInputQty.textContent = formatNumber(inputTotal);
-  totalStockInQty.textContent = formatNumber(stockInTotal);
-  totalBadQty.textContent = formatNumber(badTotal);
+  html += `</tr>`;
+
+
+  html += `<tr>`;
+
+  columns.forEach(function (column) {
+    const itemText = getSecondHeaderText(column.key);
+
+    html += `
+      <th class="header-label">
+        ${escapeHtml(itemText)}
+      </th>
+    `;
+  });
+
+  html += `</tr>`;
+
+
+  html += `<tr>`;
+
+  columns.forEach(function (column) {
+    let value = "";
+
+    if (column.type === "number") {
+      value = formatNumber(summary[column.key]);
+    }
+
+    const ngClass = isNgColumn(column.key) ? "ng" : "";
+
+    html += `
+      <th class="summary-cell ${ngClass}">
+        ${value}
+      </th>
+    `;
+  });
+
+  html += `</tr>`;
+
+
+  html += `<tr>`;
+
+  columns.forEach(function (column) {
+    html += `
+      <th class="header-label">
+        ${escapeHtml(column.label)}
+      </th>
+    `;
+  });
+
+  html += `</tr>`;
+
+  tableHead.innerHTML = html;
 }
 
 
-// =========================
-// 表格
-// =========================
-
-function renderTable(data) {
-  if (data.length === 0) {
+function renderExcelBody(rows, columns) {
+  if (rows.length === 0) {
     tableBody.innerHTML = `
       <tr>
-        <td colspan="11" class="empty">查無資料</td>
+        <td colspan="${columns.length}" class="empty">查無資料</td>
       </tr>
     `;
     return;
@@ -93,85 +115,110 @@ function renderTable(data) {
 
   let html = "";
 
-  data.forEach(function (item) {
-    html += `
-      <tr>
-        <td>${escapeHtml(item.source_sheet)}</td>
-        <td>${formatDate(item.date)}</td>
-        <td>${escapeHtml(item.work_order)}</td>
-        <td>${escapeHtml(item.item_no)}</td>
-        <td>${formatNumber(item.input_qty)}</td>
-        <td>${formatNumber(item.stock_in_qty)}</td>
-        <td>${formatNumber(item.not_stock_in_qty)}</td>
-        <td>${formatNumber(item.available_qty)}</td>
-        <td>${formatNumber(item.shipped_qty)}</td>
-        <td>${formatNumber(item.bad_qty)}</td>
-        <td>${formatYield(item.yield_rate)}</td>
-      </tr>
-    `;
+  rows.forEach(function (row) {
+    html += `<tr>`;
+
+    columns.forEach(function (column) {
+      const key = column.key;
+      const value = row[key];
+
+      let className = "";
+
+      if (column.type === "number") {
+        className += " number";
+      }
+
+      if (isNgColumn(key)) {
+        className += " ng";
+      }
+
+      if (key === "work_order") {
+        className += " work-order-cell";
+      }
+
+      if (key === "yield_rate") {
+        className += ` ${getYieldClass(value)}`;
+      }
+
+      html += `
+        <td class="${className}">
+          ${formatCellValue(value, column)}
+        </td>
+      `;
+    });
+
+    html += `</tr>`;
   });
 
   tableBody.innerHTML = html;
 }
 
 
-// =========================
-// 搜尋功能
-// =========================
-
 function filterData() {
-  const workOrderKeyword = searchWorkOrder.value.trim().toLowerCase();
-  const itemNoKeyword = searchItemNo.value.trim().toLowerCase();
+  const keyword = searchWorkOrder.value.trim().toLowerCase();
 
-  const filteredData = inventoryData.filter(function (item) {
-    const workOrder = String(item.work_order || "").toLowerCase();
-    const itemNo = String(item.item_no || "").toLowerCase();
+  const filteredRows = allRows.filter(function (row) {
+    const workOrder = String(row.work_order || "").toLowerCase();
 
-    const matchWorkOrder = workOrder.includes(workOrderKeyword);
-    const matchItemNo = itemNo.includes(itemNoKeyword);
-
-    return matchWorkOrder && matchItemNo;
+    return workOrder.includes(keyword);
   });
 
-  renderPage(filteredData);
+  renderExcelBody(filteredRows, tableData.columns || []);
 }
 
-
-// =========================
-// 清除條件
-// =========================
 
 function resetFilter() {
   searchWorkOrder.value = "";
-  searchItemNo.value = "";
-
-  renderPage(inventoryData);
+  renderExcelBody(allRows, tableData.columns || []);
 }
 
 
-// =========================
-// 格式化工具
-// =========================
+function getSecondHeaderText(key) {
+  const map = {
+    date: "",
+    work_order: "",
+    input_qty: "30-4118-018-XXX",
+    incoming_wait_qc: "30-4118-018-XX",
+    wait_issue_qty: "30-4118-018-XXX#1",
+    process_1_1_qty: "30-4118-018-XXX--#1-1",
+    process_1_1_ng: "",
+    process_1_2_qty: "30-4118-018-XXX--#1-2",
+    process_1_2_ng: "",
+    wait_qc_01: "30-4118-018-XXX",
+    ng_01: "",
+    wait_outsource_qty: "30-4118-018-000--#2",
+    vendor: "",
+    outsource_wait_return_qty: "",
+    outsource_ng: "",
+    wait_qc_02: "30-4118-018-XXX",
+    ng_02: "",
+    not_stock_in_qty: "",
+    not_allocated_qty: "",
+    bad_qty: "",
+    yield_rate: "",
+  };
+
+  return map[key] || "";
+}
+
+
+function formatCellValue(value, column) {
+  if (column.key === "yield_rate") {
+    return formatYield(value);
+  }
+
+  if (column.type === "number") {
+    return formatNumber(value);
+  }
+
+  return escapeHtml(value);
+}
+
 
 function formatNumber(value) {
   const number = Number(value) || 0;
 
   return number.toLocaleString("zh-TW");
-}
-
-
-function formatDate(value) {
-  if (!value) {
-    return "";
-  }
-
-  const date = new Date(value);
-
-  if (isNaN(date.getTime())) {
-    return String(value);
-  }
-
-  return date.toLocaleDateString("zh-TW");
 }
 
 
@@ -182,12 +229,37 @@ function formatYield(value) {
     return "-";
   }
 
-  // Excel 如果讀出 0.9966，代表 99.66%
   if (number <= 1) {
     return `${(number * 100).toFixed(2)}%`;
   }
 
   return `${number.toFixed(2)}%`;
+}
+
+
+function getYieldClass(value) {
+  const number = Number(value) || 0;
+  const percent = number <= 1 ? number * 100 : number;
+
+  if (percent >= 98) {
+    return "rate-good";
+  }
+
+  if (percent >= 95) {
+    return "rate-warning";
+  }
+
+  return "rate-bad";
+}
+
+
+function isNgColumn(key) {
+  return key.toLowerCase().includes("ng") || key === "bad_qty";
+}
+
+
+function formatMultiLine(text) {
+  return escapeHtml(text).replaceAll("\n", "<br>");
 }
 
 
@@ -201,10 +273,5 @@ function escapeHtml(value) {
 }
 
 
-// =========================
-// 綁定事件
-// =========================
-
 searchWorkOrder.addEventListener("input", filterData);
-searchItemNo.addEventListener("input", filterData);
 resetBtn.addEventListener("click", resetFilter);
