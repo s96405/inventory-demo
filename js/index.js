@@ -245,20 +245,33 @@ function getVisibleColumns(rows) {
   }
 
   if (mode === "nonzero") {
-    return FRONTEND_COLUMNS.filter(function (column) {
-      if (column.fixed || column.key === "yield_rate") {
-        return true;
-      }
+  return FRONTEND_COLUMNS.filter(function (column) {
+    // 固定欄位永遠顯示：來料日期、製令單號
+    if (column.fixed) {
+      return true;
+    }
 
-      if (column.type !== "number") {
-        return true;
-      }
+    // 直通率保留
+    if (column.key === "yield_rate") {
+      return true;
+    }
 
-      return rows.some(function (row) {
-        return Number(row[column.key]) !== 0;
-      });
+    // 入料數保留顯示，但不要拿來影響「有數量欄位」判斷
+    if (column.key === "input_qty") {
+      return false;
+    }
+
+    // 文字欄位，例如廠商，保留
+    if (column.type !== "number") {
+      return true;
+    }
+
+    // 其他數量欄位，有任一筆不是 0 才顯示
+    return rows.some(function (row) {
+      return Number(row[column.key]) !== 0;
     });
-  }
+  });
+}
 
   return FRONTEND_COLUMNS;
 }
