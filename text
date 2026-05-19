@@ -1,0 +1,14 @@
+inventory-demo/
+├─ index.html          首頁儀表板
+├─ stock.html          庫存查詢
+├─ detail.html         製令明細
+├─ mapping.html        欄位對照
+├─ css/
+│  └─ style.css
+├─ js/
+│  ├─ dashboard.js
+│  ├─ stock.js
+│  ├─ detail.js
+│  └─ mapping.js
+└─ data/
+   └─ inventory_demo.json

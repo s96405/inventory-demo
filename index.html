@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>庫存查詢系統 Demo</title>
+
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+
+    <main class="page">
+
+        <header class="page-header">
+            <div>
+                <h1>庫存查詢系統 Demo</h1>
+                <p>資料來源：客戶現有 Excel 報表，後續可串接 ERP / SQL Server</p>
+            </div>
+        </header>
+
+        <section class="summary-cards">
+
+            <div class="summary-card">
+                <p>總筆數</p>
+                <strong id="totalCount">0</strong>
+            </div>
+
+            <div class="summary-card">
+                <p>總入料數</p>
+                <strong id="totalInputQty">0</strong>
+            </div>
+
+            <div class="summary-card">
+                <p>總入庫數</p>
+                <strong id="totalStockInQty">0</strong>
+            </div>
+
+            <div class="summary-card">
+                <p>總不良數</p>
+                <strong id="totalBadQty">0</strong>
+            </div>
+
+        </section>
+
+        <section class="toolbar">
+
+            <div class="search-group">
+                <label for="searchWorkOrder">製令單號</label>
+                <input id="searchWorkOrder" type="text" placeholder="請輸入製令單號" />
+            </div>
+
+            <div class="search-group">
+                <label for="searchItemNo">料號</label>
+                <input id="searchItemNo" type="text" placeholder="請輸入料號" />
+            </div>
+
+            <button id="resetBtn" type="button">清除條件</button>
+
+        </section>
+
+        <section class="table-section">
+
+            <div class="table-header">
+                <h2>庫存資料列表</h2>
+                <p>目前資料由 Excel 轉成 JSON 顯示</p>
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>來源表</th>
+                            <th>來料日期</th>
+                            <th>製令單號</th>
+                            <th>料號</th>
+                            <th>入料數</th>
+                            <th>入庫數</th>
+                            <th>未入庫</th>
+                            <th>可出貨</th>
+                            <th>已出貨</th>
+                            <th>總不良</th>
+                            <th>直通率</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tableBody">
+                        <tr>
+                            <td colspan="11" class="empty">資料載入中...</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
