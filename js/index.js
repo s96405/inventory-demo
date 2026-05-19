@@ -1,11 +1,7 @@
-// js/index.js
-// 功能：把 JSON 畫成接近 Excel 的多層製程追蹤表
-// 重點：
-// 1. 第 1 列：製程大分類
-// 2. 第 2 列：料號 / 製程說明，使用 colspan 合併
-// 3. 第 3 列：製程總數
-// 4. 第 4 列：欄位名稱
-// 5. tbody：每筆製令資料
+// 功能：仿 Excel 製程追蹤表
+// 1. 顯示全部欄位 / 只顯示有數量欄位 / 只顯示 NG 欄位
+// 2. 搜尋後重新計算目前篩選結果總數
+// 3. 不加入系統判斷欄位，只顯示 Excel 轉出的資料
 
 let allRows = [];
 let tableData = null;
@@ -13,22 +9,199 @@ let tableData = null;
 const tableHead = document.querySelector("#tableHead");
 const tableBody = document.querySelector("#tableBody");
 const searchWorkOrder = document.querySelector("#searchWorkOrder");
+const columnMode = document.querySelector("#columnMode");
 const resetBtn = document.querySelector("#resetBtn");
 
-// =========================
-// 載入 JSON
-// =========================
+/* 前端欄位設定 */
+const FRONTEND_COLUMNS = [
+  {
+    key: "date",
+    label: "來料日期",
+    type: "text",
+    groupTitle: "115年度",
+    groupClass: "group-year",
+    secondTitle: "",
+    fixed: true
+  },
+  {
+    key: "work_order",
+    label: "製令單號",
+    type: "text",
+    groupTitle: "素材廠：淳梓（自購料）\n30-4118-018-XXX#1\n定容定量：小籃168pcs",
+    groupClass: "group-material",
+    secondTitle: "",
+    fixed: true
+  },
+  {
+    key: "input_qty",
+    label: "入料數",
+    type: "number",
+    groupTitle: "總來料數",
+    groupClass: "group-total",
+    secondTitle: "30-4118-018-XX"
+  },
+  {
+    key: "incoming_wait_qc",
+    label: "進料待檢",
+    type: "number",
+    groupTitle: "品管進料檢驗",
+    groupClass: "group-qc",
+    secondTitle: "30-4118-018-XX"
+  },
+  {
+    key: "wait_issue_qty",
+    label: "#01待發料數量",
+    type: "number",
+    groupTitle: "發料\n168/籃",
+    groupClass: "group-issue",
+    secondTitle: "30-4118-018-XXX#1"
+  },
+  {
+    key: "process_1_1_qty",
+    label: "#1-1未加工",
+    type: "number",
+    groupTitle: "車床--粗車",
+    groupClass: "group-process",
+    secondTitle: "30-4118-018-XXX--#1-1"
+  },
+  {
+    key: "process_1_1_ng",
+    label: "#1-1 NG",
+    type: "number",
+    groupTitle: "車床--粗車",
+    groupClass: "group-process",
+    secondTitle: "30-4118-018-XXX--#1-1",
+    ng: true
+  },
+  {
+    key: "process_1_2_qty",
+    label: "#1-2未加工",
+    type: "number",
+    groupTitle: "車床",
+    groupClass: "group-process",
+    secondTitle: "30-4118-018-XXX--#1-2"
+  },
+  {
+    key: "process_1_2_ng",
+    label: "#1-2 NG",
+    type: "number",
+    groupTitle: "車床",
+    groupClass: "group-process",
+    secondTitle: "30-4118-018-XXX--#1-2",
+    ng: true
+  },
+  {
+    key: "wait_qc_01",
+    label: "#01待檢驗",
+    type: "number",
+    groupTitle: "外觀檢驗",
+    groupClass: "group-qc",
+    secondTitle: "30-4118-018-XXX"
+  },
+  {
+    key: "ng_01",
+    label: "#01NG",
+    type: "number",
+    groupTitle: "外觀檢驗",
+    groupClass: "group-qc",
+    secondTitle: "30-4118-018-XXX",
+    ng: true
+  },
+  {
+    key: "wait_outsource_qty",
+    label: "#02待委外數量",
+    type: "number",
+    groupTitle: "委外－俊杰 Y003 頭部拋磨",
+    groupClass: "group-outsource",
+    secondTitle: "30-4118-018-000--#2"
+  },
+  {
+    key: "vendor",
+    label: "#02廠商",
+    type: "text",
+    groupTitle: "委外－俊杰 Y003 頭部拋磨",
+    groupClass: "group-outsource",
+    secondTitle: "30-4118-018-000--#2"
+  },
+  {
+    key: "outsource_wait_return_qty",
+    label: "#02待回數量",
+    type: "number",
+    groupTitle: "委外－俊杰 Y003 頭部拋磨",
+    groupClass: "group-outsource",
+    secondTitle: "30-4118-018-000--#2"
+  },
+  {
+    key: "outsource_ng",
+    label: "#02委外NG",
+    type: "number",
+    groupTitle: "委外－俊杰 Y003 頭部拋磨",
+    groupClass: "group-outsource",
+    secondTitle: "30-4118-018-000--#2",
+    ng: true
+  },
+  {
+    key: "wait_qc_02",
+    label: "#02待檢驗",
+    type: "number",
+    groupTitle: "品管檢驗",
+    groupClass: "group-qc",
+    secondTitle: "30-4118-018-XXX"
+  },
+  {
+    key: "ng_02",
+    label: "#02 NG",
+    type: "number",
+    groupTitle: "品管檢驗",
+    groupClass: "group-qc",
+    secondTitle: "30-4118-018-XXX",
+    ng: true
+  },
+  {
+    key: "not_stock_in_qty",
+    label: "未入庫數量",
+    type: "number",
+    groupTitle: "尚未入庫",
+    groupClass: "group-stock",
+    secondTitle: ""
+  },
+  {
+    key: "not_allocated_qty",
+    label: "尚未分料數量",
+    type: "number",
+    groupTitle: "尚未分料",
+    groupClass: "group-stock",
+    secondTitle: ""
+  },
+  {
+    key: "bad_qty",
+    label: "總不良數",
+    type: "number",
+    groupTitle: "總不良數量",
+    groupClass: "group-ng",
+    secondTitle: "",
+    ng: true
+  },
+  {
+    key: "yield_rate",
+    label: "直通率",
+    type: "number",
+    groupTitle: "直通率",
+    groupClass: "group-rate",
+    secondTitle: ""
+  }
+];
 
-fetch("./data/inventory_demo.json")
+fetch("/inventory-demo/data/inventory_demo.json")
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
     tableData = data;
-    allRows = data.rows || [];
 
-    renderExcelHead(data);
-    renderExcelBody(allRows, data.columns || []);
+    allRows = data.rows || [];
+      
+    renderPage();
   })
   .catch(function (error) {
     console.error("讀取 JSON 失敗：", error);
@@ -40,78 +213,157 @@ fetch("./data/inventory_demo.json")
     `;
   });
 
-// =========================
-// 產生 Excel 表頭
-// =========================
+function renderPage() {
+  const filteredRows = getFilteredRows();
+  const visibleColumns = getVisibleColumns(filteredRows);
 
-function renderExcelHead(data) {
-  const groups = data.header_groups || [];
-  const columns = data.columns || [];
-  const summary = data.summary || {};
+  renderExcelHead(filteredRows, visibleColumns);
+  renderExcelBody(filteredRows, visibleColumns);
+}
 
+function getFilteredRows() {
+  const keyword = searchWorkOrder.value.trim().toLowerCase();
+
+  return allRows.filter(function (row) {
+    const workOrder = String(row.work_order || "").toLowerCase();
+
+    return workOrder.includes(keyword);
+  });
+}
+
+function getVisibleColumns(rows) {
+  const mode = columnMode.value;
+
+  if (mode === "all") {
+    return FRONTEND_COLUMNS;
+  }
+
+  if (mode === "ng") {
+    return FRONTEND_COLUMNS.filter(function (column) {
+      return column.fixed || column.ng || column.key === "yield_rate";
+    });
+  }
+
+  if (mode === "nonzero") {
+    return FRONTEND_COLUMNS.filter(function (column) {
+      if (column.fixed || column.key === "yield_rate") {
+        return true;
+      }
+
+      if (column.type !== "number") {
+        return true;
+      }
+
+      return rows.some(function (row) {
+        return Number(row[column.key]) !== 0;
+      });
+    });
+  }
+
+  return FRONTEND_COLUMNS;
+}
+
+function renderExcelHead(rows, columns) {
   let html = "";
 
-  // =========================
-  // 第 1 列：製程大分類
-  // =========================
-  html += `<tr>`;
+  html += renderGroupRow(columns);
+  html += renderSecondTitleRow(columns);
+  html += renderSummaryRow(rows, columns);
+  html += renderColumnLabelRow(columns);
 
-  groups.forEach(function (group) {
+  tableHead.innerHTML = html;
+}
+
+function renderGroupRow(columns) {
+  let html = `<tr>`;
+
+  let index = 0;
+
+  while (index < columns.length) {
+    const current = columns[index];
+
+    let colspan = 1;
+    let nextIndex = index + 1;
+
+    while (
+      nextIndex < columns.length &&
+      columns[nextIndex].groupTitle === current.groupTitle &&
+      columns[nextIndex].groupClass === current.groupClass
+    ) {
+      colspan++;
+      nextIndex++;
+    }
+
     html += `
-      <th class="${escapeHtml(group.className)}" colspan="${group.colspan}">
-        ${formatMultiLine(group.title)}
+      <th class="${escapeHtml(current.groupClass)}" colspan="${colspan}">
+        ${formatMultiLine(current.groupTitle)}
       </th>
     `;
-  });
+
+    index = nextIndex;
+  }
 
   html += `</tr>`;
 
-  // =========================
-  // 第 2 列：料號 / 製程說明
-  // 這裡用 colspan 合併，讓它更像 Excel
-  // 欄位總數必須跟 columns 數量一致：目前 21 欄
-  // =========================
-  html += `
-    <tr>
-      <th class="header-label"></th>
-      <th class="header-label"></th>
-      <th class="header-label">30-4118-018-XX</th>
-      <th class="header-label">30-4118-018-XX</th>
-      <th class="header-label">30-4118-018-XXX#1</th>
+  return html;
+}
 
-      <th class="header-label" colspan="2">30-4118-018-XXX--#1-1</th>
+function renderSecondTitleRow(columns) {
+  let html = `<tr>`;
 
-      <th class="header-label" colspan="2">30-4118-018-XXX--#1-2</th>
+  let index = 0;
 
-      <th class="header-label" colspan="2">30-4118-018-XXX</th>
+  while (index < columns.length) {
+    const current = columns[index];
 
-      <th class="header-label" colspan="4">30-4118-018-000--#2</th>
+    let colspan = 1;
+    let nextIndex = index + 1;
 
-      <th class="header-label" colspan="2">30-4118-018-XXX</th>
+    while (
+      nextIndex < columns.length &&
+      columns[nextIndex].secondTitle === current.secondTitle &&
+      columns[nextIndex].groupTitle === current.groupTitle
+    ) {
+      colspan++;
+      nextIndex++;
+    }
 
-      <th class="header-label"></th>
-      <th class="header-label"></th>
-      <th class="header-label"></th>
-      <th class="header-label"></th>
-    </tr>
-  `;
+    html += `
+      <th class="header-label" colspan="${colspan}">
+        ${escapeHtml(current.secondTitle)}
+      </th>
+    `;
 
-  // =========================
-  // 第 3 列：製程總數
-  // =========================
-  html += `<tr>`;
+    index = nextIndex;
+  }
+
+  html += `</tr>`;
+
+  return html;
+}
+
+function renderSummaryRow(rows, columns) {
+  let html = `<tr>`;
 
   columns.forEach(function (column) {
     let value = "";
 
     if (column.type === "number") {
-      value = formatNumber(summary[column.key]);
+      const total = rows.reduce(function (sum, row) {
+        return sum + (Number(row[column.key]) || 0);
+      }, 0);
+
+      value = formatNumber(total);
     }
 
-    const ngClass = isNgColumn(column.key) ? "ng" : "";
+    if (column.key === "yield_rate") {
+      value = calcAverageYield(rows);
+    }
+
+    const className = column.ng ? "summary-cell ng" : "summary-cell";
 
     html += `
-      <th class="summary-cell ${ngClass}">
+      <th class="${className}">
         ${value}
       </th>
     `;
@@ -119,10 +371,11 @@ function renderExcelHead(data) {
 
   html += `</tr>`;
 
-  // =========================
-  // 第 4 列：欄位名稱
-  // =========================
-  html += `<tr>`;
+  return html;
+}
+
+function renderColumnLabelRow(columns) {
+  let html = `<tr>`;
 
   columns.forEach(function (column) {
     html += `
@@ -134,12 +387,8 @@ function renderExcelHead(data) {
 
   html += `</tr>`;
 
-  tableHead.innerHTML = html;
+  return html;
 }
-
-// =========================
-// 產生表格資料
-// =========================
 
 function renderExcelBody(rows, columns) {
   if (rows.length === 0) {
@@ -166,7 +415,7 @@ function renderExcelBody(rows, columns) {
         className += " number";
       }
 
-      if (isNgColumn(key)) {
+      if (column.ng) {
         className += " ng";
       }
 
@@ -191,36 +440,12 @@ function renderExcelBody(rows, columns) {
   tableBody.innerHTML = html;
 }
 
-// =========================
-// 搜尋功能
-// =========================
-
-function filterData() {
-  const keyword = searchWorkOrder.value.trim().toLowerCase();
-
-  const filteredRows = allRows.filter(function (row) {
-    const workOrder = String(row.work_order || "").toLowerCase();
-
-    return workOrder.includes(keyword);
-  });
-
-  renderExcelBody(filteredRows, tableData.columns || []);
-}
-
-// =========================
-// 清除條件
-// =========================
-
-function resetFilter() {
-  searchWorkOrder.value = "";
-  renderExcelBody(allRows, tableData.columns || []);
-}
-
-// =========================
-// 格式化資料
-// =========================
 
 function formatCellValue(value, column) {
+  if (column.key === "date") {
+    return formatDate(value);
+  }
+
   if (column.key === "yield_rate") {
     return formatYield(value);
   }
@@ -238,6 +463,20 @@ function formatNumber(value) {
   return number.toLocaleString("zh-TW");
 }
 
+function formatDate(value) {
+  if (!value) {
+    return "";
+  }
+
+  const date = new Date(value);
+
+  if (isNaN(date.getTime())) {
+    return String(value).split(" ")[0];
+  }
+
+  return date.toLocaleDateString("zh-TW");
+}
+
 function formatYield(value) {
   const number = Number(value) || 0;
 
@@ -245,12 +484,27 @@ function formatYield(value) {
     return "-";
   }
 
-  // Excel 如果讀出 0.9966，代表 99.66%
   if (number <= 1) {
     return `${(number * 100).toFixed(2)}%`;
   }
 
   return `${number.toFixed(2)}%`;
+}
+
+function calcAverageYield(rows) {
+  const validRows = rows.filter(function (row) {
+    return Number(row.yield_rate) > 0;
+  });
+
+  if (validRows.length === 0) {
+    return "-";
+  }
+
+  const total = validRows.reduce(function (sum, row) {
+    return sum + Number(row.yield_rate);
+  }, 0);
+
+  return formatYield(total / validRows.length);
 }
 
 function getYieldClass(value) {
@@ -268,10 +522,6 @@ function getYieldClass(value) {
   return "rate-bad";
 }
 
-function isNgColumn(key) {
-  return key.toLowerCase().includes("ng") || key === "bad_qty";
-}
-
 function formatMultiLine(text) {
   return escapeHtml(text).replaceAll("\n", "<br>");
 }
@@ -285,9 +535,10 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
-// =========================
-// 綁定事件
-// =========================
-
-searchWorkOrder.addEventListener("input", filterData);
-resetBtn.addEventListener("click", resetFilter);
+searchWorkOrder.addEventListener("input", renderPage);
+columnMode.addEventListener("change", renderPage);
+resetBtn.addEventListener("click", function () {
+  searchWorkOrder.value = "";
+  columnMode.value = "all";
+  renderPage();
+});

@@ -22,12 +22,23 @@
         </header>
 
         <section class="toolbar">
+
             <div class="search-group">
                 <label for="searchWorkOrder">製令單號</label>
                 <input id="searchWorkOrder" type="text" placeholder="輸入製令單號搜尋" />
             </div>
 
+            <div class="search-group">
+                <label for="columnMode">欄位顯示</label>
+                <select id="columnMode">
+                    <option value="all">顯示全部欄位</option>
+                    <option value="nonzero">只顯示有數量欄位</option>
+                    <option value="ng">只顯示 NG / 不良欄位</option>
+                </select>
+            </div>
+
             <button id="resetBtn" type="button">清除條件</button>
+
         </section>
 
         <section class="excel-section">
@@ -40,6 +51,7 @@
             <div class="excel-wrapper">
                 <table class="excel-table">
                     <thead id="tableHead"></thead>
+
                     <tbody id="tableBody">
                         <tr>
                             <td class="empty">資料載入中...</td>

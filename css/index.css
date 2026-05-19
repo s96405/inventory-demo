@@ -56,16 +56,19 @@ body {
     color: #475569;
 }
 
-.search-group input {
+.search-group input,
+.search-group select {
     width: 280px;
     height: 38px;
     border: 1px solid #cbd5e1;
     border-radius: 8px;
     padding: 0 10px;
     font-size: 14px;
+    background: #ffffff;
 }
 
-.search-group input:focus {
+.search-group input:focus,
+.search-group select:focus {
     outline: none;
     border-color: #2563eb;
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
@@ -173,7 +176,7 @@ body {
     height: 38px;
 }
 
-/* 表格資料 */
+/* 資料列 */
 .excel-table tbody td {
     background: #ffffff;
 }
@@ -241,6 +244,7 @@ body {
     color: #111827;
 }
 
+
 /* 直通率顏色 */
 .rate-good {
     background: #b7e58a !important;
@@ -302,6 +306,8 @@ body {
     color: #ffffff;
 }
 
+
+
 .header-label {
     background: #d9eaf7;
 }
@@ -313,6 +319,10 @@ body {
 
 .summary-cell.ng {
     color: #dc2626;
+}
+
+.summary-cell.system {
+    color: #92400e;
 }
 
 /* 空資料 */
@@ -334,6 +344,7 @@ body {
     }
 
     .search-group input,
+    .search-group select,
     .toolbar button {
         width: 100%;
     }
