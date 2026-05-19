@@ -1,0 +1,16 @@
+# 原始 Excel 不上傳
+excel/
+*.xlsm
+*.xlsx
+*.xls
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# 帳密
+.env
+
+# 系統
+.DS_Store
