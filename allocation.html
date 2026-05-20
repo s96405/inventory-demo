@@ -24,58 +24,67 @@
             </div>
         </header>
 
-        <!-- 分配摘要 -->
-        <section class="summary-section">
-            <div id="summaryCards" class="summary-grid">
-                <div class="summary-card">
-                    <p>分配摘要載入中...</p>
-                </div>
-            </div>
+        <!-- 沒有分配明細時顯示 -->
+        <section id="noAllocationMessage" class="empty-panel hidden">
+            此產品目前沒有分配明細資料，請回到製程追蹤查看各製程狀態。
         </section>
 
-        <!-- 分配明細表格 -->
-        <section class="table-section">
-        
-            <div class="table-title">
-                <div class="table-title-text">
-                    <h2>分配明細資料</h2>
+        <!-- 有分配明細時顯示 -->
+        <section id="allocationContent">
+
+            <section class="summary-section">
+                <div id="summaryCards" class="summary-grid">
+                    <div class="summary-card">
+                        <p>分配摘要載入中...</p>
+                    </div>
                 </div>
-            
-                <section class="table-toolbar">
-                    <div class="search-group">
-                        <label for="searchOrder">製令單號</label>
-                        <input id="searchOrder" type="text" placeholder="輸入第一或第二製程製令" />
+            </section>
+
+            <section class="table-section">
+
+                <div class="table-title">
+                    <div class="table-title-text">
+                        <h2>分配明細資料</h2>
                     </div>
-            
-                    <div class="search-group">
-                        <label for="typeSelect">分配型號</label>
-                        <select id="typeSelect"></select>
-                    </div>
-            
-                    <button id="resetBtn" type="button">清除條件</button>
-                </section>
-            </div>
-        
-            <div class="table-wrapper">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>日期</th>
-                            <th>第一製程製令</th>
-                            <th>分配型號</th>
-                            <th>第二製程製令</th>
-                            <th>分配數量</th>
-                        </tr>
-                    </thead>
-        
-                    <tbody id="allocationBody">
-                        <tr>
-                            <td colspan="5" class="empty">資料載入中...</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        
+
+                    <section class="table-toolbar">
+                        <div class="search-group">
+                            <label for="searchOrder">製令單號</label>
+                            <input id="searchOrder" type="text" placeholder="輸入第一或第二製程製令" />
+                        </div>
+
+                        <div class="search-group">
+                            <label for="typeSelect">製程分頁</label>
+                            <select id="typeSelect"></select>
+                        </div>
+
+                        <button id="resetBtn" type="button">清除條件</button>
+                    </section>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>日期</th>
+                                <th>製程分頁</th>
+                                <th>第一製程製令</th>
+                                <th>分配型號</th>
+                                <th>第二製程製令</th>
+                                <th>分配數量</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="allocationBody">
+                            <tr>
+                                <td colspan="6" class="empty">資料載入中...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
         </section>
 
     </main>

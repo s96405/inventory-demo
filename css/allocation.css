@@ -370,6 +370,21 @@ body {
 
 }
 
+.hidden {
+    display: none;
+}
+
+.empty-panel {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 28px;
+    color: #64748b;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+}
+
 /* 手機 / 小螢幕 */
 
 @media (max-width: 900px) {
@@ -388,19 +403,15 @@ body {
     .table-toolbar button {
         width: 100%;
     }
-}
 
     .table-wrapper {
-
         max-height: none;
-
     }
 
     .data-table {
-
         min-width: 800px;
-
     }
+}
 
 
 

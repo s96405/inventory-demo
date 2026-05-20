@@ -427,7 +427,26 @@ def find_allocation_header_row(sheet):
 def build_allocation_column_map(sheet, header_row):
     column_map = {}
 
+    # 先找到「第一製程製令」的位置，因為它代表分配明細表的起點
+    anchor_col = None
+
     for cell in sheet[header_row]:
+        header_text = normalize_text(cell.value)
+
+        if "第一製程製令" in header_text:
+            anchor_col = cell.column
+            break
+
+    if not anchor_col:
+        return column_map
+
+    # 分配明細欄位大概在：
+    # 日期、第一製程製令、分配型號、第二製程製令、分配數量
+    start_col = max(1, anchor_col - 1)
+    end_col = anchor_col + 4
+
+    for col_index in range(start_col, end_col + 1):
+        cell = sheet.cell(row=header_row, column=col_index)
         header_text = normalize_text(cell.value)
 
         if not header_text:
@@ -441,7 +460,7 @@ def build_allocation_column_map(sheet, header_row):
 
             for keyword in col_def["keywords"]:
                 if normalize_text(keyword) in header_text:
-                    column_map[key] = cell.column
+                    column_map[key] = col_index
                     break
 
     return column_map
@@ -522,6 +541,10 @@ def convert_allocation_rows(workbook):
 
         column_map = build_allocation_column_map(sheet, header_row)
         rows = build_allocation_rows(sheet, header_row, column_map)
+
+        # 加上來源工作表，讓前端知道這筆分配明細來自哪個製程分頁
+        for row in rows:
+            row["sheet_name"] = sheet_name
 
         print(f"找到分配明細工作表：{sheet_name}")
         print(f"分配明細表頭列：{header_row}")

@@ -3,6 +3,8 @@ const searchOrder = document.querySelector("#searchOrder");
 const typeSelect = document.querySelector("#typeSelect");
 const resetBtn = document.querySelector("#resetBtn");
 const summaryCards = document.querySelector("#summaryCards");
+const allocationContent = document.querySelector("#allocationContent");
+const noAllocationMessage = document.querySelector("#noAllocationMessage");
 
 let allocationRows = [];
 let allocationSummary = [];
@@ -15,7 +17,16 @@ fetch("data/inventory_demo.json")
     allocationRows = data.allocations || [];
     allocationSummary = data.allocation_summary || [];
 
-    renderTypeOptions();
+    if (allocationRows.length === 0) {
+      allocationContent.classList.add("hidden");
+      noAllocationMessage.classList.remove("hidden");
+      return;
+    }
+
+    allocationContent.classList.remove("hidden");
+    noAllocationMessage.classList.add("hidden");
+
+    renderSheetOptions();
     renderSummaryCards();
     renderAllocationTable();
   })
@@ -30,28 +41,28 @@ fetch("data/inventory_demo.json")
 
     allocationBody.innerHTML = `
       <tr>
-        <td colspan="5" class="empty">讀取資料失敗</td>
+        <td colspan="6" class="empty">讀取資料失敗</td>
       </tr>
     `;
   });
 
-function renderTypeOptions() {
-  const typeSet = new Set();
+function renderSheetOptions() {
+  const sheetSet = new Set();
 
   allocationRows.forEach(function (row) {
-    if (row.allocation_type) {
-      typeSet.add(row.allocation_type);
+    if (row.sheet_name) {
+      sheetSet.add(row.sheet_name);
     }
   });
 
-  const types = Array.from(typeSet).sort();
+  const sheets = Array.from(sheetSet).sort();
 
   let html = `<option value="all">全部</option>`;
 
-  types.forEach(function (type) {
+  sheets.forEach(function (sheetName) {
     html += `
-      <option value="${escapeHtml(type)}">
-        ${escapeHtml(type)}
+      <option value="${escapeHtml(sheetName)}">
+        ${escapeHtml(sheetName)}
       </option>
     `;
   });
@@ -60,16 +71,16 @@ function renderTypeOptions() {
 }
 
 function renderSummaryCards() {
-  const type = typeSelect.value;
+  const sheetName = typeSelect.value;
 
   const filteredSummary = allocationSummary.filter(function (item) {
-    return type === "all" || item.allocation_type === type;
+    return sheetName === "all" || item.sheet_name === sheetName;
   });
 
   if (filteredSummary.length === 0) {
     summaryCards.innerHTML = `
       <div class="summary-card">
-        <p>查無分配摘要</p>
+        <p>此製程分頁沒有分配摘要</p>
       </div>
     `;
     return;
@@ -93,7 +104,7 @@ function renderSummaryCards() {
 
 function renderAllocationTable() {
   const keyword = searchOrder.value.trim().toLowerCase();
-  const type = typeSelect.value;
+  const sheetName = typeSelect.value;
 
   const filteredRows = allocationRows.filter(function (row) {
     const fromOrder = String(row.from_work_order || "").toLowerCase();
@@ -103,17 +114,17 @@ function renderAllocationTable() {
       fromOrder.includes(keyword) ||
       toOrder.includes(keyword);
 
-    const matchType =
-      type === "all" ||
-      row.allocation_type === type;
+    const matchSheet =
+      sheetName === "all" ||
+      row.sheet_name === sheetName;
 
-    return matchOrder && matchType;
+    return matchOrder && matchSheet;
   });
 
   if (filteredRows.length === 0) {
     allocationBody.innerHTML = `
       <tr>
-        <td colspan="5" class="empty">查無資料</td>
+        <td colspan="6" class="empty">查無資料</td>
       </tr>
     `;
     return;
@@ -125,6 +136,7 @@ function renderAllocationTable() {
     html += `
       <tr>
         <td>${escapeHtml(formatDate(row.date))}</td>
+        <td>${escapeHtml(row.sheet_name)}</td>
         <td>${escapeHtml(row.from_work_order)}</td>
         <td>${escapeHtml(row.allocation_type)}</td>
         <td>${escapeHtml(row.to_work_order)}</td>
