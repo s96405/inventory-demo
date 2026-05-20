@@ -73,8 +73,18 @@ function renderSheetOptions() {
 function renderSummaryCards() {
   const sheetName = typeSelect.value;
 
+  // 全部模式不要顯示一堆卡片
+  if (sheetName === "all") {
+    summaryCards.innerHTML = `
+      <div class="summary-card">
+        <p>請選擇製程分頁後查看分配摘要</p>
+      </div>
+    `;
+    return;
+  }
+
   const filteredSummary = allocationSummary.filter(function (item) {
-    return sheetName === "all" || item.sheet_name === sheetName;
+    return item.sheet_name === sheetName;
   });
 
   if (filteredSummary.length === 0) {

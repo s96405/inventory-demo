@@ -568,6 +568,18 @@ def convert_allocation_summary(workbook):
 
     summary_rows = []
 
+
+def convert_allocation_summary(workbook):
+    """
+    動態抓右側分配摘要。
+    例如：
+    018-4XX / 018-5XX / 018-6XX
+    或
+    018-370 / 018-400 / 018-420 / 018-450
+    """
+
+    summary_rows = []
+
     print("開始掃描分配摘要...")
     print("-" * 30)
 
@@ -576,31 +588,32 @@ def convert_allocation_summary(workbook):
 
         sheet = workbook[sheet_name]
 
-        for row_index in range(1, min(sheet.max_row, 80) + 1):
+        for row_index in range(2, min(sheet.max_row, 80) + 1):
             row_values = [normalize_text(cell.value) for cell in sheet[row_index]]
             row_text = "".join(row_values)
 
-            # 找到 018-4XX / 018-5XX / 018-6XX 那一列
-            if not (
-                "018-4XX" in row_text
-                and "018-5XX" in row_text
-                and "018-6XX" in row_text
-            ):
+            # 找到「分配數量」這一列
+            if "分配數量" not in row_text:
                 continue
 
-            type_row = row_index
-            label_row = row_index + 1
-            total_row = row_index + 2
-            process_row = row_index + 3
-            wait_qc_row = row_index + 4
+            # 分配型號在「分配數量」的上一列
+            type_row = row_index - 1
+            label_row = row_index
+            total_row = row_index + 1
+            process_row = row_index + 2
+            wait_qc_row = row_index + 3
 
             type_columns = []
 
+            # 從上一列找所有 018- 開頭的分配型號
             for cell in sheet[type_row]:
                 cell_text = normalize_text(cell.value)
 
-                if cell_text in ["018-4XX", "018-5XX", "018-6XX"]:
+                if cell_text.startswith("018-"):
                     type_columns.append({"type": cell_text, "column": cell.column})
+
+            if len(type_columns) == 0:
+                continue
 
             for item in type_columns:
                 col = item["column"]
@@ -622,10 +635,10 @@ def convert_allocation_summary(workbook):
                 )
 
             print(f"找到分配摘要工作表：{sheet_name}")
+            print(f"分配型號：{[item['type'] for item in type_columns]}")
             print(f"摘要筆數：{len(type_columns)}")
             print("-" * 30)
 
-            # 找到一次就不用繼續掃同一張
             break
 
     print(f"分配摘要掃描完成，總筆數：{len(summary_rows)}")

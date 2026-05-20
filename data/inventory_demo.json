@@ -23561,6 +23561,90 @@
       "total_qty": 30168,
       "in_process_qty": 348,
       "waiting_qc_qty": 457
+    },
+    {
+      "sheet_name": "4XX",
+      "allocation_type": "018-370",
+      "total_qty": 418,
+      "in_process_qty": 0,
+      "waiting_qc_qty": 0
+    },
+    {
+      "sheet_name": "4XX",
+      "allocation_type": "018-400",
+      "total_qty": 100,
+      "in_process_qty": 0,
+      "waiting_qc_qty": 0
+    },
+    {
+      "sheet_name": "4XX",
+      "allocation_type": "018-420",
+      "total_qty": 30,
+      "in_process_qty": 0,
+      "waiting_qc_qty": 0
+    },
+    {
+      "sheet_name": "4XX",
+      "allocation_type": "018-450",
+      "total_qty": 13224,
+      "in_process_qty": 0,
+      "waiting_qc_qty": 77
+    },
+    {
+      "sheet_name": "5XX",
+      "allocation_type": "018-470",
+      "total_qty": 339,
+      "in_process_qty": 0,
+      "waiting_qc_qty": 0
+    },
+    {
+      "sheet_name": "5XX",
+      "allocation_type": "018-500",
+      "total_qty": 1781,
+      "in_process_qty": 0,
+      "waiting_qc_qty": 0
+    },
+    {
+      "sheet_name": "5XX",
+      "allocation_type": "018-520",
+      "total_qty": 347,
+      "in_process_qty": 138,
+      "waiting_qc_qty": 0
+    },
+    {
+      "sheet_name": "5XX",
+      "allocation_type": "018-550",
+      "total_qty": 50606,
+      "in_process_qty": 336,
+      "waiting_qc_qty": 0
+    },
+    {
+      "sheet_name": "6XX",
+      "allocation_type": "018-570",
+      "total_qty": 617,
+      "in_process_qty": 0,
+      "waiting_qc_qty": 0
+    },
+    {
+      "sheet_name": "6XX",
+      "allocation_type": "018-600",
+      "total_qty": 26501,
+      "in_process_qty": 1120,
+      "waiting_qc_qty": 0
+    },
+    {
+      "sheet_name": "6XX",
+      "allocation_type": "018-620",
+      "total_qty": 1050,
+      "in_process_qty": 0,
+      "waiting_qc_qty": 0
+    },
+    {
+      "sheet_name": "6XX",
+      "allocation_type": "018-650",
+      "total_qty": 2566,
+      "in_process_qty": 0,
+      "waiting_qc_qty": 0
     }
   ]
 }
