@@ -368,6 +368,27 @@ body {
     padding: 24px;
 }
 
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: #1e293b;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.back-btn:hover {
+    background: #0f172a;
+}
 
 
 /* 手機版 */
