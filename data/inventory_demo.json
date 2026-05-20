@@ -19153,5 +19153,3866 @@
         }
       ]
     }
-  }
+  },
+  "allocations": [
+    {
+      "date": "2024-10-09 00:00:00",
+      "from_work_order": "B-1131009001",
+      "allocation_type": "018-4XX",
+      "to_work_order": "B-1131112003",
+      "allocation_qty": 1622
+    },
+    {
+      "date": "2024-12-16 00:00:00",
+      "from_work_order": "B-1131009001",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-1131112001",
+      "allocation_qty": 3000
+    },
+    {
+      "date": "2025-02-18 00:00:00",
+      "from_work_order": "B-1131009001",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-1131112002",
+      "allocation_qty": 2135
+    },
+    {
+      "date": "2025-03-18 00:00:00",
+      "from_work_order": "B-1131024011",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20241225006",
+      "allocation_qty": 840
+    },
+    {
+      "date": "2025-06-03 00:00:00",
+      "from_work_order": "B-1131024011",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20241227001",
+      "allocation_qty": 1227
+    },
+    {
+      "date": "2025-06-12 00:00:00",
+      "from_work_order": "B-1131024011",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20250314005",
+      "allocation_qty": 8
+    },
+    {
+      "date": "2025-07-25 00:00:00",
+      "from_work_order": "B-20250218014",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20250314005",
+      "allocation_qty": 1918
+    },
+    {
+      "date": "2025-08-15 00:00:00",
+      "from_work_order": "B-20250318001",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20250421004",
+      "allocation_qty": 1000
+    },
+    {
+      "date": "2025-09-09 00:00:00",
+      "from_work_order": "B-20250318001",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20250421008",
+      "allocation_qty": 3781
+    },
+    {
+      "date": "2025-10-27 00:00:00",
+      "from_work_order": "B-20250603003",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20250613003",
+      "allocation_qty": 2000
+    },
+    {
+      "date": "2025-11-11 00:00:00",
+      "from_work_order": "B-20250603003",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20250623001",
+      "allocation_qty": 1000
+    },
+    {
+      "date": "2025-12-04 00:00:00",
+      "from_work_order": "B-20250603003",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20250630004",
+      "allocation_qty": 1000
+    },
+    {
+      "date": "2025-12-24 00:00:00",
+      "from_work_order": "B-20250603003",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20250630005",
+      "allocation_qty": 1199
+    },
+    {
+      "date": "2025-12-31 00:00:00",
+      "from_work_order": "B-20250612006",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20250714002",
+      "allocation_qty": 1800
+    },
+    {
+      "date": "2026-01-13 00:00:00",
+      "from_work_order": "B-20250612006",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20250715004",
+      "allocation_qty": 1000
+    },
+    {
+      "date": "2026-01-27 00:00:00",
+      "from_work_order": "B-20250612006",
+      "allocation_type": "018-4XX",
+      "to_work_order": "B-20250715005",
+      "allocation_qty": 1000
+    },
+    {
+      "date": "2026-01-28 00:00:00",
+      "from_work_order": "B-20250612006",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20250715006",
+      "allocation_qty": 1410
+    },
+    {
+      "date": "2026-01-30 00:00:00",
+      "from_work_order": "B-20250725001",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20250821008",
+      "allocation_qty": 672
+    },
+    {
+      "date": "2026-02-02 00:00:00",
+      "from_work_order": "B-20250725001",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20250825001",
+      "allocation_qty": 504
+    },
+    {
+      "date": "2026-02-10 00:00:00",
+      "from_work_order": "B-20250725001",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20250825005",
+      "allocation_qty": 504
+    },
+    {
+      "date": "2026-03-05 00:00:00",
+      "from_work_order": "B-20250612006",
+      "allocation_type": "018-4XX",
+      "to_work_order": "B-20250902004",
+      "allocation_qty": 40
+    },
+    {
+      "date": "2026-03-20 00:00:00",
+      "from_work_order": "B-20250725001",
+      "allocation_type": "018-4XX",
+      "to_work_order": "B-20250902004",
+      "allocation_qty": 960
+    },
+    {
+      "date": "2026-04-08 00:00:00",
+      "from_work_order": "B-20250725001",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20250902005",
+      "allocation_qty": 2000
+    },
+    {
+      "date": "2026-04-10 00:00:00",
+      "from_work_order": "B-20250725001",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20250902006",
+      "allocation_qty": 28
+    },
+    {
+      "date": "2026-04-16 00:00:00",
+      "from_work_order": "B-20250815002",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20250902006",
+      "allocation_qty": 972
+    },
+    {
+      "date": "2026-04-21 00:00:00",
+      "from_work_order": "B-20250815002",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20251003001",
+      "allocation_qty": 2500
+    },
+    {
+      "date": "2026-05-07 00:00:00",
+      "from_work_order": "B-20250815002",
+      "allocation_type": "018-4XX",
+      "to_work_order": "B-20251003002",
+      "allocation_qty": 1484
+    },
+    {
+      "date": "2026-05-11 00:00:00",
+      "from_work_order": "B-20250909001",
+      "allocation_type": "018-4XX",
+      "to_work_order": "B-20251029004",
+      "allocation_qty": 16
+    },
+    {
+      "date": "9999-12-31 00:00:00",
+      "from_work_order": "B-20250909001",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20251028003",
+      "allocation_qty": 1000
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250909001",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20251029005",
+      "allocation_qty": 661
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250909001",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20251104004",
+      "allocation_qty": 2154
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251027006",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20251120002",
+      "allocation_qty": 700
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251027006",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20251124001",
+      "allocation_qty": 500
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251111002",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20251128001",
+      "allocation_qty": 760
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251111002",
+      "allocation_type": "018-4XX",
+      "to_work_order": "B-20251202003",
+      "allocation_qty": 907
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251111002",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20251203003",
+      "allocation_qty": 1176
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251111002",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20251205001",
+      "allocation_qty": 1316
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251111002",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20251211001",
+      "allocation_qty": 827
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251204003",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20251212001",
+      "allocation_qty": 336
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251204003",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20251216001",
+      "allocation_qty": 840
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251204003",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20251217002",
+      "allocation_qty": 180
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251204003",
+      "allocation_type": "018-4XX",
+      "to_work_order": "B-20251217003",
+      "allocation_qty": 1331
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251204003",
+      "allocation_type": "018-4XX",
+      "to_work_order": "B-20251223006",
+      "allocation_qty": 396
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251204003",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20251223007",
+      "allocation_qty": 1915
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251111002",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20251223007",
+      "allocation_qty": 2
+    },
+    {
+      "date": "",
+      "from_work_order": "B-1131024011",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260105007",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251111002",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260105007",
+      "allocation_qty": 8
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251224002",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260105007",
+      "allocation_qty": 991
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251224002",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20260105008",
+      "allocation_qty": 1600
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251224002",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260116003",
+      "allocation_qty": 1248
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251231001",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20260116004",
+      "allocation_qty": 1159
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250815002",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260122001",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251224002",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260122001",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251111002",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260122001",
+      "allocation_qty": 3
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260113008",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260122001",
+      "allocation_qty": 235
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260113008",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20260122002",
+      "allocation_qty": 101
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260113008",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260123001",
+      "allocation_qty": 297
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260113008",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20260123002",
+      "allocation_qty": 298
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260113008",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260126001",
+      "allocation_qty": 420
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260113008",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20260126002",
+      "allocation_qty": 420
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260113008",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260127004",
+      "allocation_qty": 446
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260113008",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20260127005",
+      "allocation_qty": 446
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260113008",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20260128001",
+      "allocation_qty": 1300
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260113008",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260128002",
+      "allocation_qty": 212
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260113008",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260128002",
+      "allocation_qty": 800
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260127013",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260128002",
+      "allocation_qty": 24
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260128007",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260128002",
+      "allocation_qty": 24
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260128007",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260204006",
+      "allocation_qty": 800
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260128007",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20260204007",
+      "allocation_qty": 1500
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260128007",
+      "allocation_type": "018-4XX",
+      "to_work_order": "B-20260204008",
+      "allocation_qty": 862
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260130003",
+      "allocation_type": "018-4XX",
+      "to_work_order": "B-20260204008",
+      "allocation_qty": 138
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260130003",
+      "allocation_type": "018-4XX",
+      "to_work_order": "B-20260223003",
+      "allocation_qty": 1661
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260202007",
+      "allocation_type": "018-4XX",
+      "to_work_order": "B-20260223003",
+      "allocation_qty": 718
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260202007",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260223004",
+      "allocation_qty": 2000
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260210005",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20260317001",
+      "allocation_qty": 2228
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260210005",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20260319002",
+      "allocation_qty": 168
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260305002",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260319003",
+      "allocation_qty": 3500
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260128007",
+      "allocation_type": "018-4XX",
+      "to_work_order": "B-20260331003",
+      "allocation_qty": 8
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260305002",
+      "allocation_type": "018-4XX",
+      "to_work_order": "B-20260331003",
+      "allocation_qty": 1470
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260320001",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260408001",
+      "allocation_qty": 504
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260320001",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260409003",
+      "allocation_qty": 839
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260320001",
+      "allocation_type": "018-4XX",
+      "to_work_order": "B-20260410010",
+      "allocation_qty": 672
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260320001",
+      "allocation_type": "018-4XX",
+      "to_work_order": "B-20260413001",
+      "allocation_qty": 828
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260320001",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20250415002",
+      "allocation_qty": 1227
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260305002",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20250415002",
+      "allocation_qty": 27
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260320001",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20250415002",
+      "allocation_qty": 924
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260408006",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20250415002",
+      "allocation_qty": 97
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260410001",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20250415002",
+      "allocation_qty": 336
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260410001",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20260416001",
+      "allocation_qty": 836
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260410001",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20260417001",
+      "allocation_qty": 658
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260410001",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260421001",
+      "allocation_qty": 1500
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260408006",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20260421002",
+      "allocation_qty": 168
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260410001",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20260421002",
+      "allocation_qty": 831
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260408006",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260424004",
+      "allocation_qty": 2000
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260408006",
+      "allocation_type": "018-4XX",
+      "to_work_order": "B-20260424005",
+      "allocation_qty": 914
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260410001",
+      "allocation_type": "018-4XX",
+      "to_work_order": "B-20260424005",
+      "allocation_qty": 586
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260410001",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20260427006",
+      "allocation_qty": 212
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260416011",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20260427006",
+      "allocation_qty": 1288
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260416011",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260429005",
+      "allocation_qty": 2000
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260416011",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20260429006",
+      "allocation_qty": 1688
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260421006",
+      "allocation_type": "018-5XX",
+      "to_work_order": "B-20260505001",
+      "allocation_qty": 1492
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260421006",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20260508002",
+      "allocation_qty": 2000
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260421006",
+      "allocation_type": "018-6XX",
+      "to_work_order": "B-20260513005",
+      "allocation_qty": 1188
+    },
+    {
+      "date": "2024-12-21 00:00:00",
+      "from_work_order": "B-1131112003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20250108003",
+      "allocation_qty": 641
+    },
+    {
+      "date": "2025-07-15 00:00:00",
+      "from_work_order": "B-1131112003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20250109002",
+      "allocation_qty": 319
+    },
+    {
+      "date": "2025-08-06 00:00:00",
+      "from_work_order": "B-1131112003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-202401100100",
+      "allocation_qty": 360
+    },
+    {
+      "date": "2025-09-02 00:00:00",
+      "from_work_order": "B-1131112003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20250113001",
+      "allocation_qty": 220
+    },
+    {
+      "date": "2025-10-03 00:00:00",
+      "from_work_order": "B-20250715005",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20250731003",
+      "allocation_qty": 165
+    },
+    {
+      "date": "2025-10-29 00:00:00",
+      "from_work_order": "B-20250715005",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20250801002",
+      "allocation_qty": 164
+    },
+    {
+      "date": "2025-12-02 00:00:00",
+      "from_work_order": "B-1131112003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20250801002",
+      "allocation_qty": 3
+    },
+    {
+      "date": "2025-12-17 00:00:00",
+      "from_work_order": "B-20250715005",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20250804004",
+      "allocation_qty": 302
+    },
+    {
+      "date": "2025-12-23 00:00:00",
+      "from_work_order": "B-20250715005",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20250805003",
+      "allocation_qty": 310
+    },
+    {
+      "date": "2026-02-04 00:00:00",
+      "from_work_order": "W-20250806001",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20250807002",
+      "allocation_qty": 151
+    },
+    {
+      "date": "2026-02-23 00:00:00",
+      "from_work_order": "B-20250715005",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20250807003",
+      "allocation_qty": 32
+    },
+    {
+      "date": "2026-03-31 00:00:00",
+      "from_work_order": "B-20250902004",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20250908001",
+      "allocation_qty": 326
+    },
+    {
+      "date": "2026-04-10 00:00:00",
+      "from_work_order": "B-20250902004",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20250909006",
+      "allocation_qty": 620
+    },
+    {
+      "date": "2026-04-24 00:00:00",
+      "from_work_order": "B-20250902004",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20251016005",
+      "allocation_qty": 6
+    },
+    {
+      "date": "9999-12-31 00:00:00",
+      "from_work_order": "B-20251003002",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20251016005",
+      "allocation_qty": 180
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251003002",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20251020005",
+      "allocation_qty": 316
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251003002",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20251021001",
+      "allocation_qty": 495
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251003002",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20251103003",
+      "allocation_qty": 429
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251003002",
+      "allocation_type": "018-450",
+      "to_work_order": "R-20251201001",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "舊制另",
+      "allocation_type": "018-450",
+      "to_work_order": "R-20251201001",
+      "allocation_qty": 98
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251202003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20251203004",
+      "allocation_qty": 238
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251202003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20251204004",
+      "allocation_qty": 248
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251029004",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20251210001",
+      "allocation_qty": 16
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251202003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20251210001",
+      "allocation_qty": 325
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251202003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20251230001",
+      "allocation_qty": 77
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251217003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20251230001",
+      "allocation_qty": 164
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251217003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20251231003",
+      "allocation_qty": 952
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251223006",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20251231003",
+      "allocation_qty": 168
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251217003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260106002",
+      "allocation_qty": 154
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251003002",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260106002",
+      "allocation_qty": 9
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251223006",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260106002",
+      "allocation_qty": 163
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251217003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260211008",
+      "allocation_qty": 31
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260204008",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260309006",
+      "allocation_qty": 240
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251223006",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260310003",
+      "allocation_qty": 58
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260204008",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260310003",
+      "allocation_qty": 181
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260204008",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260311002",
+      "allocation_qty": 288
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260204008",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260312001",
+      "allocation_qty": 190
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260204008",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260317002",
+      "allocation_qty": 6
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260223003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260317002",
+      "allocation_qty": 468
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260223003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260318009",
+      "allocation_qty": 285
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260223003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260402001",
+      "allocation_qty": 205
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260223003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260402012",
+      "allocation_qty": 487
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260223003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260407002",
+      "allocation_qty": 853
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260331003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260407002",
+      "allocation_qty": 472
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260331003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260407003",
+      "allocation_qty": 122
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260331003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260408004",
+      "allocation_qty": 614
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260331003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260420003",
+      "allocation_qty": 146
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260410010",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260420003",
+      "allocation_qty": 121
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260223003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260423005",
+      "allocation_qty": 2
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260331003",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260423005",
+      "allocation_qty": 4
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260410010",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260423005",
+      "allocation_qty": 79
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260410010",
+      "allocation_type": "018-420",
+      "to_work_order": "B-20260423004",
+      "allocation_qty": 30
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260424005",
+      "allocation_type": "018-370",
+      "to_work_order": "B-20260504004",
+      "allocation_qty": 273
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260424005",
+      "allocation_type": "018-400",
+      "to_work_order": "B-20260504003",
+      "allocation_qty": 100
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260424005",
+      "allocation_type": "018-370",
+      "to_work_order": "B-20260505007",
+      "allocation_qty": 145
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260424005",
+      "allocation_type": "018-450",
+      "to_work_order": "B-20260506007",
+      "allocation_qty": 78
+    },
+    {
+      "date": "2024-04-08 00:00:00",
+      "from_work_order": "B-1131112001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-1131203005",
+      "allocation_qty": 313
+    },
+    {
+      "date": "2024-06-20 00:00:00",
+      "from_work_order": "B-1131112001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-1131204016",
+      "allocation_qty": 168
+    },
+    {
+      "date": "2024-09-03 00:00:00",
+      "from_work_order": "B-1131112001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-1131205005",
+      "allocation_qty": 299
+    },
+    {
+      "date": "2024-10-28 00:00:00",
+      "from_work_order": "B-1131112001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-1131206001",
+      "allocation_qty": 116
+    },
+    {
+      "date": "2024-12-21 00:00:00",
+      "from_work_order": "B-1131112001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-1131216004",
+      "allocation_qty": 94
+    },
+    {
+      "date": "2024-12-25 00:00:00",
+      "from_work_order": "B-1131112001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20241227006",
+      "allocation_qty": 161
+    },
+    {
+      "date": "2024-12-27 00:00:00",
+      "from_work_order": "B-1131112001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20241230001",
+      "allocation_qty": 314
+    },
+    {
+      "date": "2025-03-17 00:00:00",
+      "from_work_order": "B-1131112001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20241231003",
+      "allocation_qty": 167
+    },
+    {
+      "date": "2025-04-14 00:00:00",
+      "from_work_order": "B-1131112001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250102001",
+      "allocation_qty": 329
+    },
+    {
+      "date": "2025-04-21 00:00:00",
+      "from_work_order": "B-1130903015",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250103001",
+      "allocation_qty": 5
+    },
+    {
+      "date": "2025-06-13 00:00:00",
+      "from_work_order": "B-1131112001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250103001",
+      "allocation_qty": 459
+    },
+    {
+      "date": "2025-06-16 00:00:00",
+      "from_work_order": "B-1131112001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250106005",
+      "allocation_qty": 486
+    },
+    {
+      "date": "2025-06-30 00:00:00",
+      "from_work_order": "B-1130408002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250114001",
+      "allocation_qty": 71
+    },
+    {
+      "date": "2025-07-14 00:00:00",
+      "from_work_order": "B-20240620013",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250114001",
+      "allocation_qty": 3
+    },
+    {
+      "date": "2025-07-15 00:00:00",
+      "from_work_order": "B-1131112001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250114001",
+      "allocation_qty": 2
+    },
+    {
+      "date": "2025-08-22 00:00:00",
+      "from_work_order": "B-20241225006",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250114001",
+      "allocation_qty": 276
+    },
+    {
+      "date": "2025-08-25 00:00:00",
+      "from_work_order": "B-20241225006",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250115015",
+      "allocation_qty": 162
+    },
+    {
+      "date": "2025-08-25 00:00:00",
+      "from_work_order": "B-20241225006",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250116002",
+      "allocation_qty": 159
+    },
+    {
+      "date": "2025-09-02 00:00:00",
+      "from_work_order": "B-20241225006",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250117002",
+      "allocation_qty": 160
+    },
+    {
+      "date": "2025-10-27 00:00:00",
+      "from_work_order": "B-20241227001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250117002",
+      "allocation_qty": 154
+    },
+    {
+      "date": "2025-10-28 00:00:00",
+      "from_work_order": "B-20241227001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250120009",
+      "allocation_qty": 165
+    },
+    {
+      "date": "2025-10-29 00:00:00",
+      "from_work_order": "B-20241227001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250121005",
+      "allocation_qty": 317
+    },
+    {
+      "date": "2025-11-04 00:00:00",
+      "from_work_order": "B-20241227001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250122003",
+      "allocation_qty": 525
+    },
+    {
+      "date": "2025-11-20 00:00:00",
+      "from_work_order": "B-1131112001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250122003",
+      "allocation_qty": 3
+    },
+    {
+      "date": "2025-11-24 00:00:00",
+      "from_work_order": "B-1131028001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250306004",
+      "allocation_qty": 24
+    },
+    {
+      "date": "2025-11-28 00:00:00",
+      "from_work_order": "B-1131112001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250306004",
+      "allocation_qty": 5
+    },
+    {
+      "date": "2025-12-03 00:00:00",
+      "from_work_order": "B-20241225006",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250306004",
+      "allocation_qty": 7
+    },
+    {
+      "date": "2025-12-05 00:00:00",
+      "from_work_order": "B-20241227001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250306004",
+      "allocation_qty": 18
+    },
+    {
+      "date": "2025-12-23 00:00:00",
+      "from_work_order": "B-20240620013",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250414004",
+      "allocation_qty": 6
+    },
+    {
+      "date": "2026-01-05 00:00:00",
+      "from_work_order": "B-1130903015",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250414004",
+      "allocation_qty": 4
+    },
+    {
+      "date": "2026-01-16 00:00:00",
+      "from_work_order": "B-1131028001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250414004",
+      "allocation_qty": 2
+    },
+    {
+      "date": "2026-01-22 00:00:00",
+      "from_work_order": "B-1131112001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250414004",
+      "allocation_qty": 4
+    },
+    {
+      "date": "2026-01-23 00:00:00",
+      "from_work_order": "B-20250314005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250414004",
+      "allocation_qty": 292
+    },
+    {
+      "date": "2026-01-26 00:00:00",
+      "from_work_order": "R-20250414002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250414004",
+      "allocation_qty": 6
+    },
+    {
+      "date": "2026-01-27 00:00:00",
+      "from_work_order": "B-20250314005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250417002",
+      "allocation_qty": 504
+    },
+    {
+      "date": "2026-01-28 00:00:00",
+      "from_work_order": "B-20250314005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250418001",
+      "allocation_qty": 304
+    },
+    {
+      "date": "2026-01-29 00:00:00",
+      "from_work_order": "B-20250314005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250422001",
+      "allocation_qty": 328
+    },
+    {
+      "date": "2026-02-04 00:00:00",
+      "from_work_order": "B-20250314005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250423006",
+      "allocation_qty": 383
+    },
+    {
+      "date": "2026-02-23 00:00:00",
+      "from_work_order": "B-20250314005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250516002",
+      "allocation_qty": 22
+    },
+    {
+      "date": "2026-03-19 00:00:00",
+      "from_work_order": "B-20250421008",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250516002",
+      "allocation_qty": 347
+    },
+    {
+      "date": "2026-04-08 00:00:00",
+      "from_work_order": "B-20250421008",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250517001",
+      "allocation_qty": 306
+    },
+    {
+      "date": "2026-04-09 00:00:00",
+      "from_work_order": "B-20250421008",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250520009",
+      "allocation_qty": 390
+    },
+    {
+      "date": "2026-04-13 00:00:00",
+      "from_work_order": "B-20250421008",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250521002",
+      "allocation_qty": 134
+    },
+    {
+      "date": "2026-04-15 00:00:00",
+      "from_work_order": "B-20250421008",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250522001",
+      "allocation_qty": 240
+    },
+    {
+      "date": "2026-04-21 00:00:00",
+      "from_work_order": "B-20250421008",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250523004",
+      "allocation_qty": 134
+    },
+    {
+      "date": "2026-04-24 00:00:00",
+      "from_work_order": "B-20250421008",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250523005",
+      "allocation_qty": 88
+    },
+    {
+      "date": "2026-04-29 00:00:00",
+      "from_work_order": "B-20250421008",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250604005",
+      "allocation_qty": 394
+    },
+    {
+      "date": "2026-05-05 00:00:00",
+      "from_work_order": "B-20250421008",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250605001",
+      "allocation_qty": 228
+    },
+    {
+      "date": "9999-12-31 00:00:00",
+      "from_work_order": "B-20250421008",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250606001",
+      "allocation_qty": 336
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250421008",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250609002",
+      "allocation_qty": 453
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250421008",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250610001",
+      "allocation_qty": 164
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250421008",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250611002",
+      "allocation_qty": 244
+    },
+    {
+      "date": "",
+      "from_work_order": "R-20250616001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250617002",
+      "allocation_qty": 222
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250421008",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250617002",
+      "allocation_qty": 5
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250613003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250620002",
+      "allocation_qty": 168
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250613003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250623002",
+      "allocation_qty": 327
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250613003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250624003",
+      "allocation_qty": 322
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250613003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250627001",
+      "allocation_qty": 159
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250613003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250630003",
+      "allocation_qty": 167
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250613003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250701001",
+      "allocation_qty": 165
+    },
+    {
+      "date": "",
+      "from_work_order": "B-1131112001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250702004",
+      "allocation_qty": 2
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250421008",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250702004",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250613003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250702004",
+      "allocation_qty": 374
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250630005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250714001",
+      "allocation_qty": 364
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250630005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250717002",
+      "allocation_qty": 180
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250630005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250722003",
+      "allocation_qty": 115
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250630005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250723002",
+      "allocation_qty": 346
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250714002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250724001",
+      "allocation_qty": 323
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250714002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250728002",
+      "allocation_qty": 166
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250714002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250729003",
+      "allocation_qty": 320
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250714002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250730005",
+      "allocation_qty": 162
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250630005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250729003",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250630005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250807005",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250714002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250807005",
+      "allocation_qty": 4
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250715006",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250807005",
+      "allocation_qty": 3
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250421008",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250807005",
+      "allocation_qty": 29
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250715006",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250811003",
+      "allocation_qty": 310
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250714002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250811004",
+      "allocation_qty": 145
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250715006",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250811004",
+      "allocation_qty": 47
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250714002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250812001",
+      "allocation_qty": 292
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250714002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250812003",
+      "allocation_qty": 49
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250715006",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250812003",
+      "allocation_qty": 113
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250714002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250812006",
+      "allocation_qty": 167
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250613003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250819001",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250630005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250819001",
+      "allocation_qty": 71
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250714002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250819001",
+      "allocation_qty": 4
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250715006",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250819001",
+      "allocation_qty": 260
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250421008",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250820001",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250714002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250820001",
+      "allocation_qty": 122
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250715006",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250820001",
+      "allocation_qty": 157
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250715006",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250821001",
+      "allocation_qty": 183
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250715006",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250822005",
+      "allocation_qty": 187
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250715006",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250822011",
+      "allocation_qty": 73
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250821008",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250902003",
+      "allocation_qty": 464
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250821008",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250903005",
+      "allocation_qty": 163
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250825001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250904001",
+      "allocation_qty": 164
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250825001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250905002",
+      "allocation_qty": 300
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250902005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250911002",
+      "allocation_qty": 160
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250902005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250912001",
+      "allocation_qty": 326
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250825005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250915002",
+      "allocation_qty": 471
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250902005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250916001",
+      "allocation_qty": 313
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250902005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250917003",
+      "allocation_qty": 499
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250825005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250918001",
+      "allocation_qty": 2
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250902005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250918001",
+      "allocation_qty": 334
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250902005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250919003",
+      "allocation_qty": 318
+    },
+    {
+      "date": "",
+      "from_work_order": "B-1131112001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251028001",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20241225006",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251028001",
+      "allocation_qty": 10
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20241227001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251028001",
+      "allocation_qty": 2
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250421008",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251028001",
+      "allocation_qty": 18
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250613003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251028001",
+      "allocation_qty": 59
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250715006",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251028001",
+      "allocation_qty": 20
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250825001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251028001",
+      "allocation_qty": 5
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250902005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251028001",
+      "allocation_qty": 7
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251027010",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251028001",
+      "allocation_qty": 35
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251028003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251105001",
+      "allocation_qty": 208
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250714002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251104006",
+      "allocation_qty": 3
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251028003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251104006",
+      "allocation_qty": 167
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251028003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251106001",
+      "allocation_qty": 264
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251028003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251107001",
+      "allocation_qty": 130
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251029005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251107001",
+      "allocation_qty": 168
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251028003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251110002",
+      "allocation_qty": 204
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251029005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251110003",
+      "allocation_qty": 327
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251029005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251114002",
+      "allocation_qty": 157
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251028003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251114002",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251104004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251117004",
+      "allocation_qty": 100
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251104004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251118002",
+      "allocation_qty": 139
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250825001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251120004",
+      "allocation_qty": 5
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251104004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251120004",
+      "allocation_qty": 426
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251104004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251121006",
+      "allocation_qty": 656
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251104004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251124002",
+      "allocation_qty": 146
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251104004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251125003",
+      "allocation_qty": 472
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251104004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251126001",
+      "allocation_qty": 132
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251120002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251126001",
+      "allocation_qty": 168
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251120002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251127006",
+      "allocation_qty": 109
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251120002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251128005",
+      "allocation_qty": 325
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251120002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251201002",
+      "allocation_qty": 27
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251124001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251201002",
+      "allocation_qty": 468
+    },
+    {
+      "date": "",
+      "from_work_order": "舊制另",
+      "allocation_type": "018-550",
+      "to_work_order": "R-20251201003",
+      "allocation_qty": 280
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251128001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251203005",
+      "allocation_qty": 166
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251104004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251205002",
+      "allocation_qty": 3
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251124001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251205002",
+      "allocation_qty": 23
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251128001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251128001",
+      "allocation_qty": 330
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251128001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251208006",
+      "allocation_qty": 252
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251203003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251208006",
+      "allocation_qty": 84
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251028003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251209002",
+      "allocation_qty": 3
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251029005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251209002",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251104004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251209002",
+      "allocation_qty": 12
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251203003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251209002",
+      "allocation_qty": 409
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251128001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251210002",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251203003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251210002",
+      "allocation_qty": 144
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251203003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251215001",
+      "allocation_qty": 500
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251128001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251215001",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251205001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251217004",
+      "allocation_qty": 166
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251203003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251222003",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251205001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20251222003",
+      "allocation_qty": 828
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251124001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260105004",
+      "allocation_qty": 3
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251205001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260105004",
+      "allocation_qty": 138
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251223007",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260105004",
+      "allocation_qty": 630
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251223007",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260106003",
+      "allocation_qty": 163
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251205001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260107001",
+      "allocation_qty": 165
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251223007",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260107001",
+      "allocation_qty": 186
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251223007",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260107008",
+      "allocation_qty": 111
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251223007",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260113013",
+      "allocation_qty": 600
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260105007",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260113013",
+      "allocation_qty": 163
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260105007",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260114003",
+      "allocation_qty": 298
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260105007",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260119004",
+      "allocation_qty": 415
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260116003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260120002",
+      "allocation_qty": 287
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260116003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260122007",
+      "allocation_qty": 562
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260116003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20250128010",
+      "allocation_qty": 96
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251104004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260130008",
+      "allocation_qty": 3
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260123001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260130008",
+      "allocation_qty": 122
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260122001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260130008",
+      "allocation_qty": 240
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260116003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260130008",
+      "allocation_qty": 224
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260105007",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260130008",
+      "allocation_qty": 50
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260123001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260202005",
+      "allocation_qty": 149
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260126001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260202005",
+      "allocation_qty": 384
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260127004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260202005",
+      "allocation_qty": 86
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260126001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260203007",
+      "allocation_qty": 3
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260127004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260203007",
+      "allocation_qty": 74
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260123001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260204004",
+      "allocation_qty": 4
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260126001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260204004",
+      "allocation_qty": 26
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251223007",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260211007",
+      "allocation_qty": 22
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260127004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260305006",
+      "allocation_qty": 223
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260128002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260305006",
+      "allocation_qty": 173
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260127004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260306001",
+      "allocation_qty": 40
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260128002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260306001",
+      "allocation_qty": 35
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260204006",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260306001",
+      "allocation_qty": 277
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260129001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260310008",
+      "allocation_qty": 457
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260129001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260311001",
+      "allocation_qty": 60
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260204006",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260311001",
+      "allocation_qty": 349
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260129001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260312002",
+      "allocation_qty": 48
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260223004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260317003",
+      "allocation_qty": 317
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260204006",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260318010",
+      "allocation_qty": 128
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260129001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260318010",
+      "allocation_qty": 228
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260223004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260320002",
+      "allocation_qty": 860
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260129001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260320002",
+      "allocation_qty": 23
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260223004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260323004",
+      "allocation_qty": 419
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260204006",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260327003",
+      "allocation_qty": 24
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260223004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260327003",
+      "allocation_qty": 185
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260319003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260327003",
+      "allocation_qty": 129
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260319003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260330003",
+      "allocation_qty": 267
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260319003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260331002",
+      "allocation_qty": 331
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260204006",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260401004",
+      "allocation_qty": 15
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260223004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260401004",
+      "allocation_qty": 17
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260319003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260401004",
+      "allocation_qty": 470
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260319003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260402013",
+      "allocation_qty": 145
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260223004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260407001",
+      "allocation_qty": 120
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260319003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260407001",
+      "allocation_qty": 25
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260319003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260407005",
+      "allocation_qty": 159
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260319003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260408003",
+      "allocation_qty": 128
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251223007",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260409006",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260116003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260409006",
+      "allocation_qty": 2
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260319003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260409006",
+      "allocation_qty": 627
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260319003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260410006",
+      "allocation_qty": 504
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260319003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260414002",
+      "allocation_qty": 421
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260408001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260414002",
+      "allocation_qty": 203
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260319003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260415011",
+      "allocation_qty": 31
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260408001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260415011",
+      "allocation_qty": 273
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260409003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260415011",
+      "allocation_qty": 217
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260409003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260416006",
+      "allocation_qty": 504
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260409003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260417007",
+      "allocation_qty": 27
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260415002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260417007",
+      "allocation_qty": 680
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260319003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260420001",
+      "allocation_qty": 24
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260409003",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260420001",
+      "allocation_qty": 34
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260415002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260420001",
+      "allocation_qty": 348
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260415002",
+      "allocation_type": "018-500",
+      "to_work_order": "B-20260420002",
+      "allocation_qty": 600
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260223004",
+      "allocation_type": "018-500",
+      "to_work_order": "B-20260421008",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260415002",
+      "allocation_type": "018-500",
+      "to_work_order": "B-20260421008",
+      "allocation_qty": 449
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260415002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260421009",
+      "allocation_qty": 314
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260413001",
+      "allocation_type": "018-470",
+      "to_work_order": "B-20260422005",
+      "allocation_qty": 230
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260413001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260422004",
+      "allocation_qty": 557
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260421001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260422004",
+      "allocation_qty": 32
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260421001",
+      "allocation_type": "018-500",
+      "to_work_order": "B-20260423006",
+      "allocation_qty": 130
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260421001",
+      "allocation_type": "018-500",
+      "to_work_order": "B-20260424002",
+      "allocation_qty": 472
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260415002",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260427003",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260421001",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260427003",
+      "allocation_qty": 508
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260421001",
+      "allocation_type": "018-470",
+      "to_work_order": "B-20260428007",
+      "allocation_qty": 109
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260421001",
+      "allocation_type": "018-520",
+      "to_work_order": "B-20260428008",
+      "allocation_qty": 209
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260424004",
+      "allocation_type": "018-500",
+      "to_work_order": "B-20260429002",
+      "allocation_qty": 129
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260424004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260429001",
+      "allocation_qty": 336
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260424004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260430006",
+      "allocation_qty": 596
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260424004",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260504005",
+      "allocation_qty": 545
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260429005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260516003",
+      "allocation_qty": 168
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260429005",
+      "allocation_type": "018-520",
+      "to_work_order": "B-20260518004",
+      "allocation_qty": 138
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260429005",
+      "allocation_type": "018-550",
+      "to_work_order": "B-20260518003",
+      "allocation_qty": 336
+    },
+    {
+      "date": "2024-09-21 00:00:00",
+      "from_work_order": "B-1131112002",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250207004",
+      "allocation_qty": 332
+    },
+    {
+      "date": "2024-12-21 00:00:00",
+      "from_work_order": "B-1131112002",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250208001",
+      "allocation_qty": 177
+    },
+    {
+      "date": "2025-04-16 00:00:00",
+      "from_work_order": "B-1131112002",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250210006",
+      "allocation_qty": 316
+    },
+    {
+      "date": "2025-04-21 00:00:00",
+      "from_work_order": "B-1130921003",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250210006",
+      "allocation_qty": 9
+    },
+    {
+      "date": "2025-06-23 00:00:00",
+      "from_work_order": "B-1131112002",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250214002",
+      "allocation_qty": 163
+    },
+    {
+      "date": "2025-06-30 00:00:00",
+      "from_work_order": "B-1131112002",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250214002",
+      "allocation_qty": 165
+    },
+    {
+      "date": "2025-07-09 00:00:00",
+      "from_work_order": "B-1131112002",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250219001",
+      "allocation_qty": 336
+    },
+    {
+      "date": "2025-07-15 00:00:00",
+      "from_work_order": "B-1131112002",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250220002",
+      "allocation_qty": 327
+    },
+    {
+      "date": "2025-09-02 00:00:00",
+      "from_work_order": "B-1131112002",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250221002",
+      "allocation_qty": 283
+    },
+    {
+      "date": "2025-09-24 00:00:00",
+      "from_work_order": "R-20250416001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250523002",
+      "allocation_qty": 4
+    },
+    {
+      "date": "2025-10-03 00:00:00",
+      "from_work_order": "B-20250421004",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250523002",
+      "allocation_qty": 157
+    },
+    {
+      "date": "2025-12-11 00:00:00",
+      "from_work_order": "B-20250421004",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250528002",
+      "allocation_qty": 164
+    },
+    {
+      "date": "2025-12-12 00:00:00",
+      "from_work_order": "B-20250421004",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250529001",
+      "allocation_qty": 147
+    },
+    {
+      "date": "2025-12-16 00:00:00",
+      "from_work_order": "B-20250421004",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250602004",
+      "allocation_qty": 164
+    },
+    {
+      "date": "2025-12-17 00:00:00",
+      "from_work_order": "B-20250421004",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250604004",
+      "allocation_qty": 261
+    },
+    {
+      "date": "2026-01-05 00:00:00",
+      "from_work_order": "B-20250623001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250703001",
+      "allocation_qty": 161
+    },
+    {
+      "date": "2026-01-16 00:00:00",
+      "from_work_order": "B-20250623001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250704004",
+      "allocation_qty": 328
+    },
+    {
+      "date": "2026-01-22 00:00:00",
+      "from_work_order": "B-20250623001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250710002",
+      "allocation_qty": 275
+    },
+    {
+      "date": "2026-01-23 00:00:00",
+      "from_work_order": "B-20250709008",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250710002",
+      "allocation_qty": 194
+    },
+    {
+      "date": "2026-01-26 00:00:00",
+      "from_work_order": "B-20250630004",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250711002",
+      "allocation_qty": 133
+    },
+    {
+      "date": "2026-01-27 00:00:00",
+      "from_work_order": "B-20250623001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250730004",
+      "allocation_qty": 3
+    },
+    {
+      "date": "2026-01-28 00:00:00",
+      "from_work_order": "B-20250630004",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250730004",
+      "allocation_qty": 307
+    },
+    {
+      "date": "2026-02-04 00:00:00",
+      "from_work_order": "B-20250630004",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250731002",
+      "allocation_qty": 261
+    },
+    {
+      "date": "2026-03-17 00:00:00",
+      "from_work_order": "B-20250715004",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250806001",
+      "allocation_qty": 477
+    },
+    {
+      "date": "2026-03-19 00:00:00",
+      "from_work_order": "B-20250421004",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250807004",
+      "allocation_qty": 54
+    },
+    {
+      "date": "2026-04-16 00:00:00",
+      "from_work_order": "B-20250715004",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250807004",
+      "allocation_qty": 160
+    },
+    {
+      "date": "2026-04-17 00:00:00",
+      "from_work_order": "B-20250623001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250814004",
+      "allocation_qty": 20
+    },
+    {
+      "date": "2026-04-21 00:00:00",
+      "from_work_order": "B-20250630004",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250814004",
+      "allocation_qty": 118
+    },
+    {
+      "date": "2026-04-27 00:00:00",
+      "from_work_order": "B-20250715004",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250814004",
+      "allocation_qty": 275
+    },
+    {
+      "date": "2026-04-29 00:00:00",
+      "from_work_order": "B-20250902006",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250919004",
+      "allocation_qty": 167
+    },
+    {
+      "date": "2026-05-08 00:00:00",
+      "from_work_order": "B-20250902006",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250922001",
+      "allocation_qty": 163
+    },
+    {
+      "date": "2026-05-13 00:00:00",
+      "from_work_order": "B-20250902006",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250924005",
+      "allocation_qty": 604
+    },
+    {
+      "date": "9999-12-31 00:00:00",
+      "from_work_order": "B-20250924007",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20250924005",
+      "allocation_qty": 54
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250902006",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20251014002",
+      "allocation_qty": 23
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251003001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20251014002",
+      "allocation_qty": 124
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251003001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20251015002",
+      "allocation_qty": 191
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251003001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20251016002",
+      "allocation_qty": 474
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250902006",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20251020006",
+      "allocation_qty": 31
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251003001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20251020006",
+      "allocation_qty": 16
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251003001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20251023001",
+      "allocation_qty": 625
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251003001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20251029003",
+      "allocation_qty": 326
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251003001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20251030004",
+      "allocation_qty": 634
+    },
+    {
+      "date": "",
+      "from_work_order": "舊制另",
+      "allocation_type": "018-600",
+      "to_work_order": "R-20251201002",
+      "allocation_qty": 221
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251003001",
+      "allocation_type": "018-600",
+      "to_work_order": "R-20251201002",
+      "allocation_qty": 7
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251211001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20251216003",
+      "allocation_qty": 249
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251211001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20251217005",
+      "allocation_qty": 134
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250902006",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20251222004",
+      "allocation_qty": 10
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251003001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20251222004",
+      "allocation_qty": 8
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251211001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20251222004",
+      "allocation_qty": 299
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251212001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20251222004",
+      "allocation_qty": 285
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251216001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20251222004",
+      "allocation_qty": 281
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251217002",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20251229002",
+      "allocation_qty": 178
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251211001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20251229012",
+      "allocation_qty": 4
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251212001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20251229012",
+      "allocation_qty": 50
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251216001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20251229012",
+      "allocation_qty": 377
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251216001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20251230002",
+      "allocation_qty": 139
+    },
+    {
+      "date": "",
+      "from_work_order": "B-1131112002",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260114004",
+      "allocation_qty": 8
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250623001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260114004",
+      "allocation_qty": 51
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260105008",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260114004",
+      "allocation_qty": 293
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260105008",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260115001",
+      "allocation_qty": 201
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260105008",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260119005",
+      "allocation_qty": 163
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260105008",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260121002",
+      "allocation_qty": 304
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260105008",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260122005",
+      "allocation_qty": 145
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260105008",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260126005",
+      "allocation_qty": 159
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20250421004",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260127006",
+      "allocation_qty": 3
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260116004",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260127006",
+      "allocation_qty": 165
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260105008",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260128011",
+      "allocation_qty": 239
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260116004",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260128011",
+      "allocation_qty": 650
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260105008",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260203008",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260116004",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260203008",
+      "allocation_qty": 323
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260122002",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260204003",
+      "allocation_qty": 85
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260123002",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260204003",
+      "allocation_qty": 287
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260126002",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260205002",
+      "allocation_qty": 304
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260126002",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260206002",
+      "allocation_qty": 83
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260128001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260206002",
+      "allocation_qty": 160
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260128001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260209005",
+      "allocation_qty": 165
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260128001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260212001",
+      "allocation_qty": 528
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260128001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260226002",
+      "allocation_qty": 379
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260127005",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260302002",
+      "allocation_qty": 376
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260127005",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260304001",
+      "allocation_qty": 62
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260204007",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260304001",
+      "allocation_qty": 131
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260204007",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260317004",
+      "allocation_qty": 197
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260204007",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260324005",
+      "allocation_qty": 486
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260204007",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260325005",
+      "allocation_qty": 392
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20251003001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260326005",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260105008",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260326005",
+      "allocation_qty": 2
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260127005",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260326005",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260128001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260326005",
+      "allocation_qty": 27
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260204007",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260326005",
+      "allocation_qty": 84
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260317001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260326005",
+      "allocation_qty": 167
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260204007",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260327002",
+      "allocation_qty": 67
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260317001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260327002",
+      "allocation_qty": 93
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260317001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260328001",
+      "allocation_qty": 312
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260317001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260330002",
+      "allocation_qty": 187
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260116004",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260331001",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260122002",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260331001",
+      "allocation_qty": 16
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260128001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260331001",
+      "allocation_qty": 24
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260317001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260331001",
+      "allocation_qty": 340
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260317001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260401001",
+      "allocation_qty": 129
+    },
+    {
+      "date": "",
+      "from_work_order": "舊制另",
+      "allocation_type": "018-650",
+      "to_work_order": "B-20260415003",
+      "allocation_qty": 286
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260317001",
+      "allocation_type": "018-650",
+      "to_work_order": "B-20260417004",
+      "allocation_qty": 200
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260105008",
+      "allocation_type": "018-620",
+      "to_work_order": "B-20260417006",
+      "allocation_qty": 3
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260204007",
+      "allocation_type": "018-620",
+      "to_work_order": "B-20260417006",
+      "allocation_qty": 96
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260317001",
+      "allocation_type": "018-620",
+      "to_work_order": "B-20260417006",
+      "allocation_qty": 251
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260317001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260420005",
+      "allocation_qty": 75
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260317001",
+      "allocation_type": "018-620",
+      "to_work_order": "B-20260421004",
+      "allocation_qty": 147
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260319002",
+      "allocation_type": "018-620",
+      "to_work_order": "B-20260421004",
+      "allocation_qty": 103
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260319002",
+      "allocation_type": "018-570",
+      "to_work_order": "B-20260421005",
+      "allocation_qty": 46
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260416001",
+      "allocation_type": "018-570",
+      "to_work_order": "B-20260421005",
+      "allocation_qty": 147
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260317001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260422002",
+      "allocation_qty": 43
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260416001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260422002",
+      "allocation_qty": 317
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260416001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260423007",
+      "allocation_qty": 116
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260417001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260424003",
+      "allocation_qty": 149
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260416001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260427004",
+      "allocation_qty": 2
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260417001",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260427004",
+      "allocation_qty": 305
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260417001",
+      "allocation_type": "018-650",
+      "to_work_order": "B-20260427005",
+      "allocation_qty": 149
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260421002",
+      "allocation_type": "018-650",
+      "to_work_order": "B-20260427005",
+      "allocation_qty": 331
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260421002",
+      "allocation_type": "018-570",
+      "to_work_order": "B-20260428006",
+      "allocation_qty": 199
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260421002",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260430004",
+      "allocation_qty": 216
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260421002",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260505005",
+      "allocation_qty": 76
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260427006",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260505005",
+      "allocation_qty": 82
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260421002",
+      "allocation_type": "018-570",
+      "to_work_order": "B-20260505006",
+      "allocation_qty": 105
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260421002",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260506008",
+      "allocation_qty": 54
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260427006",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260506008",
+      "allocation_qty": 354
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260427006",
+      "allocation_type": "018-570",
+      "to_work_order": "B-20260507006",
+      "allocation_qty": 120
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260427006",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260507007",
+      "allocation_qty": 153
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260429006",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260507007",
+      "allocation_qty": 63
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260429006",
+      "allocation_type": "018-620",
+      "to_work_order": "B-20260508007",
+      "allocation_qty": 200
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260429006",
+      "allocation_type": "018-650",
+      "to_work_order": "B-20260508008",
+      "allocation_qty": 112
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260429006",
+      "allocation_type": "018-650",
+      "to_work_order": "B-20260509001",
+      "allocation_qty": 384
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260427006",
+      "allocation_type": "018-650",
+      "to_work_order": "B-20260511001",
+      "allocation_qty": 168
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260429006",
+      "allocation_type": "018-650",
+      "to_work_order": "B-20260511001",
+      "allocation_qty": 168
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260508002",
+      "allocation_type": "018-620",
+      "to_work_order": "B-20260511011",
+      "allocation_qty": 250
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260417001",
+      "allocation_type": "018-650",
+      "to_work_order": "B-20260511013",
+      "allocation_qty": 1
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260427006",
+      "allocation_type": "018-650",
+      "to_work_order": "B-20260511013",
+      "allocation_qty": 334
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260429006",
+      "allocation_type": "018-650",
+      "to_work_order": "B-20260511013",
+      "allocation_qty": 81
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260508002",
+      "allocation_type": "018-650",
+      "to_work_order": "B-20260511013",
+      "allocation_qty": 352
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260427006",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260512004",
+      "allocation_qty": 239
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260429006",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260512004",
+      "allocation_qty": 193
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260508002",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260512004",
+      "allocation_qty": 377
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260508002",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260515001",
+      "allocation_qty": 280
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260508002",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260516001",
+      "allocation_qty": 504
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260508002",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260518002",
+      "allocation_qty": 2
+    },
+    {
+      "date": "",
+      "from_work_order": "B-20260513005",
+      "allocation_type": "018-600",
+      "to_work_order": "B-20260518002",
+      "allocation_qty": 334
+    }
+  ],
+  "allocation_summary": [
+    {
+      "sheet_name": "018#1",
+      "allocation_type": "018-4XX",
+      "total_qty": 14936,
+      "in_process_qty": 995,
+      "waiting_qc_qty": 0
+    },
+    {
+      "sheet_name": "018#1",
+      "allocation_type": "018-5XX",
+      "total_qty": 54210,
+      "in_process_qty": 2121,
+      "waiting_qc_qty": 698
+    },
+    {
+      "sheet_name": "018#1",
+      "allocation_type": "018-6XX",
+      "total_qty": 30168,
+      "in_process_qty": 348,
+      "waiting_qc_qty": 457
+    }
+  ]
 }

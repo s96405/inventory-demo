@@ -1,0 +1,393 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Microsoft JhengHei", Arial, sans-serif;
+    background: #eef2f7;
+    color: #111827;
+}
+
+.page {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.page-header {
+    margin-bottom: 18px;
+}
+
+.page-header h1 {
+    margin: 0 0 6px;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.page-header p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* 查詢區 */
+.toolbar {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+}
+
+.search-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.search-group label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #475569;
+}
+
+.search-group input,
+.search-group select {
+    width: 280px;
+    height: 38px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 0 10px;
+    font-size: 14px;
+    background: #ffffff;
+}
+
+.search-group input:focus,
+.search-group select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.toolbar button {
+    height: 38px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: 8px;
+    background: #1e293b;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.toolbar button:hover {
+    background: #0f172a;
+}
+
+/* Excel 區塊 */
+.excel-section {
+    position: relative;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+}
+
+
+.excel-title {
+    position: relative;
+    z-index: 30;
+    padding: 14px 16px;
+    border-bottom: 1px solid #d1d5db;
+    background: #ffffff;
+}
+
+.excel-title h2 {
+    margin: 0 0 4px;
+    font-size: 18px;
+}
+
+.excel-title p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.excel-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    overflow: auto;
+    max-height: calc(100vh - 220px);
+}
+
+/* 表格本體 */
+.excel-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 2600px;
+    width: max-content;
+    table-layout: auto;
+}
+
+/* 未加工 / 餘料模式：欄位少時自動填滿畫面 */
+.excel-table.compact-table {
+    min-width: 100%;
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* compact 模式不要每欄都固定最小 110px，讓欄位平均分配 */
+.excel-table.compact-table th,
+.excel-table.compact-table td {
+    min-width: auto;
+}
+
+/* compact 模式下，前兩欄仍然固定 */
+.excel-table.compact-table th:nth-child(1),
+.excel-table.compact-table td:nth-child(1) {
+    min-width: 140px;
+    width: 140px;
+}
+
+.excel-table.compact-table th:nth-child(2),
+.excel-table.compact-table td:nth-child(2) {
+    min-width: 180px;
+    width: 180px;
+}
+
+
+
+.excel-table th,
+.excel-table td {
+    border-right: 1px solid #111827;
+    border-bottom: 1px solid #111827;
+    padding: 6px 10px;
+    font-size: 13px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    height: 34px;
+    min-width: 110px;
+}
+
+.excel-table th:first-child,
+.excel-table td:first-child {
+    border-left: 1px solid #111827;
+}
+
+.excel-table thead tr:first-child th {
+    border-top: 1px solid #111827;
+}
+
+/* 多層表頭固定 */
+.excel-table thead th {
+    position: sticky;
+    z-index: 5;
+    font-weight: 800;
+    background-clip: padding-box;
+}
+
+.excel-table thead tr:nth-child(1) th {
+    top: 0;
+    height: 54px;
+}
+
+.excel-table thead tr:nth-child(2) th {
+    top: 54px;
+    height: 34px;
+}
+
+.excel-table thead tr:nth-child(3) th {
+    top: 88px;
+    height: 34px;
+}
+
+.excel-table thead tr:nth-child(4) th {
+    top: 122px;
+    height: 38px;
+}
+
+/* 資料列 */
+.excel-table tbody td {
+    background: #ffffff;
+}
+
+.excel-table tbody tr:nth-child(even) td {
+    background: #f8fafc;
+}
+
+
+.excel-table .number {
+    text-align: center;
+}
+
+.excel-table .ng {
+    color: #dc2626;
+    font-weight: 800;
+}
+
+/* 左側固定欄：來料日期、製令單號 */
+.excel-table th:nth-child(1),
+.excel-table td:nth-child(1) {
+    position: sticky;
+    left: 0;
+    z-index: 6;
+    min-width: 120px;
+    width: 120px;
+}
+
+.excel-table th:nth-child(2),
+.excel-table td:nth-child(2) {
+    position: sticky;
+    left: 120px;
+    z-index: 6;
+    min-width: 160px;
+    width: 160px;
+}
+
+.excel-table thead th:nth-child(1),
+.excel-table thead th:nth-child(2) {
+    z-index: 12;
+}
+
+.excel-table td:nth-child(1),
+.excel-table td:nth-child(2) {
+    background: #ffffff;
+}
+
+.excel-table tbody tr:nth-child(even) td:nth-child(1),
+.excel-table tbody tr:nth-child(even) td:nth-child(2) {
+    background: #f8fafc;
+}
+
+
+
+/* 製令欄仿 Excel 綠底 */
+.work-order-cell {
+    background: #92d050 !important;
+    font-weight: 800;
+    color: #111827;
+}
+
+/* 未加工餘料模式：有數量的欄位改成藍色 */
+.excel-table tbody td.has-qty {
+    background-color: #dbeafe !important;
+    color: #1e3a8a;
+    font-weight: 800;
+}
+
+
+
+/* 直通率顏色 */
+.rate-good {
+    background: #b7e58a !important;
+    font-weight: 800;
+}
+
+.rate-warning {
+    background: #fef08a !important;
+    color: #b45309;
+    font-weight: 800;
+}
+
+.rate-bad {
+    background: #fecaca !important;
+    color: #b91c1c;
+    font-weight: 800;
+}
+
+/* Excel 表頭顏色 */
+.group-year {
+    background: #ffffff;
+}
+
+.group-material {
+    background: #ffffff;
+}
+
+.group-total {
+    background: #fff200;
+}
+
+.group-qc {
+    background: #e2f0d9;
+}
+
+.group-issue {
+    background: #4f81bd;
+    color: #ffffff;
+}
+
+.group-process {
+    background: #e2f0d9;
+}
+
+.group-outsource {
+    background: #fff2cc;
+}
+
+.group-stock {
+    background: #e2f0d9;
+}
+
+.group-ng {
+    background: #ffc000;
+}
+
+.group-rate {
+    background: #70ad47;
+    color: #ffffff;
+}
+
+.header-label {
+    background: #d9eaf7;
+}
+
+.summary-cell {
+    background: #f8fafc;
+    font-weight: 800;
+}
+
+.summary-cell.ng {
+    color: #dc2626;
+}
+
+.summary-cell.system {
+    color: #92400e;
+}
+
+/* 空資料 */
+.empty {
+    text-align: center;
+    color: #64748b;
+    padding: 24px;
+}
+
+
+
+/* 手機版 */
+@media (max-width: 700px) {
+    .page {
+        padding: 14px;
+    }
+
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-group input,
+    .search-group select,
+    .toolbar button {
+        width: 100%;
+    }
+
+    .page-header h1 {
+        font-size: 24px;
+    }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>分配明細</title>
+    <link rel="stylesheet" href="css/allocation.css" />
+</head>
+
+<body>
+
+    <main class="page">
+
+        <header class="page-header">
+            <div>
+                <h1>分配明細</h1>
+                <p>查詢第一製程製令分配到後續製程的數量</p>
+            </div>
+
+            <a href="index.html" class="back-btn">返回首頁</a>
+        </header>
+
+        <!-- 上方區塊：左邊查詢，右邊摘要 -->
+        <section class="top-panel">
+
+            <section class="toolbar">
+                <div class="search-group">
+                    <label for="searchOrder">第一製程製令</label>
+                    <input id="searchOrder" type="text" placeholder="輸入第一製程製令" />
+                </div>
+
+                <div class="search-group">
+                    <label for="typeSelect">分配型號</label>
+                    <select id="typeSelect"></select>
+                </div>
+
+                <button id="resetBtn" type="button">清除條件</button>
+            </section>
+
+            <section class="summary-section">
+                <div id="summaryCards" class="summary-grid">
+                    <div class="summary-card">
+                        <p>分配摘要載入中...</p>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+
+        <section class="table-section">
+            <div class="table-title">
+                <h2>分配明細資料</h2>
+                <p>依第一製程製令、分配型號查詢分配紀錄</p>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>日期</th>
+                            <th>第一製程製令</th>
+                            <th>分配型號</th>
+                            <th>第二製程製令</th>
+                            <th>分配數量</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="allocationBody">
+                        <tr>
+                            <td colspan="5" class="empty">資料載入中...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/allocation.js"></script>
+</body>
+
+</html>

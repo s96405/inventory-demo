@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>仿 Excel 製程追蹤表</title>
+
+    <link rel="stylesheet" href="css/tracking.css" />
+</head>
+
+<body>
+
+    <main class="page">
+
+        <header class="page-header">
+            <div>
+                <h1>仿 Excel 製程追蹤表 Demo</h1>
+            </div>
+        </header>
+
+        <section class="toolbar">
+
+            <div class="search-group">
+                <label for="searchWorkOrder">製令單號</label>
+                <input id="searchWorkOrder" type="text" placeholder="輸入製令單號搜尋" />
+            </div>
+
+                <div class="search-group">
+                    <label for="sheetSelect">製程分頁</label>
+                    <select id="sheetSelect"></select>
+                </div>
+
+            <div class="search-group">
+                <label for="columnMode">欄位顯示</label>
+                <select id="columnMode">
+                    <option value="all">顯示全部欄位</option>
+                    <option value="remain">未加工 / 餘料</option>
+                    <option value="ng">NG / 不良</option>
+                </select>
+            </div>
+            
+            <button id="resetBtn" type="button">清除條件</button>
+
+
+        </section>
+
+        <section class="excel-section">
+
+            <div class="excel-title">
+                <h2>115年度 30-4118-018-XXX#1 製程追蹤表</h2>
+                <p>資料來源：Excel 轉 JSON</p>
+            </div>
+
+            <div class="excel-wrapper">
+                <table class="excel-table">
+                    <thead id="tableHead"></thead>
+
+                    <tbody id="tableBody">
+                        <tr>
+                            <td class="empty">資料載入中...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
