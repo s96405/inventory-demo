@@ -27,6 +27,11 @@
                 <input id="searchWorkOrder" type="text" placeholder="輸入製令單號搜尋" />
             </div>
 
+                <div class="search-group">
+                    <label for="sheetSelect">製程分頁</label>
+                    <select id="sheetSelect"></select>
+                </div>
+
             <div class="search-group">
                 <label for="columnMode">欄位顯示</label>
                 <select id="columnMode">
@@ -35,8 +40,9 @@
                     <option value="ng">NG / 不良</option>
                 </select>
             </div>
-
+            
             <button id="resetBtn" type="button">清除條件</button>
+
 
         </section>
 
@@ -49,7 +55,7 @@
 
             <div class="excel-wrapper">
                 <table class="excel-table">
-                    <thead id="tableHead"><gi/thead>
+                    <thead id="tableHead"></thead>
 
                     <tbody id="tableBody">
                         <tr>

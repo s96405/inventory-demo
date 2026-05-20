@@ -14,6 +14,8 @@ const tableBody = document.querySelector("#tableBody");
 const searchWorkOrder = document.querySelector("#searchWorkOrder");
 const columnMode = document.querySelector("#columnMode");
 const resetBtn = document.querySelector("#resetBtn");
+const sheetSelect = document.querySelector("#sheetSelect");
+
 
 /* 前端欄位設定 */
 const FRONTEND_COLUMNS = [
@@ -202,8 +204,7 @@ fetch("/inventory-demo/data/inventory_demo.json")
   .then(function (data) {
     tableData = data;
 
-    allRows = data.rows || [];
-      
+    renderSheetOptions();
     renderPage();
   })
   .catch(function (error) {
@@ -217,6 +218,10 @@ fetch("/inventory-demo/data/inventory_demo.json")
   });
 
 function renderPage() {
+  if (!tableData) {
+    return;
+  }
+
   const filteredRows = getFilteredRows();
   const visibleColumns = getVisibleColumns(filteredRows);
 
@@ -230,14 +235,17 @@ function renderPage() {
 
 function getFilteredRows() {
   const keyword = searchWorkOrder.value.trim().toLowerCase();
+  const sheetName = sheetSelect.value;
 
-  return allRows.filter(function (row) {
+  const currentSheet = tableData.sheets?.[sheetName] || {};
+  const rows = currentSheet.rows || [];
+
+  return rows.filter(function (row) {
     const workOrder = String(row.work_order || "").toLowerCase();
 
     return workOrder.includes(keyword);
   });
 }
-
 function getVisibleColumns(rows) {
   const mode = columnMode.value;
 
@@ -568,10 +576,75 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
-searchWorkOrder.addEventListener("input", renderPage);
-columnMode.addEventListener("change", renderPage);
+
+sheetSelect.addEventListener("change", renderPage);
 resetBtn.addEventListener("click", function () {
   searchWorkOrder.value = "";
   columnMode.value = "all";
+
+  if (tableData && tableData.sheets && tableData.sheets["018#1"]) {
+    sheetSelect.value = "018#1";
+  }
+
   renderPage();
 });
+
+function renderSheetOptions() {
+  if (!tableData || !tableData.sheets) {
+    return;
+  }
+
+  const sheetOrder = [
+    "018#1",
+    "4XX",
+    "5XX",
+    "6XX",
+    "370",
+    "400",
+    "420",
+    "450",
+    "470",
+    "500",
+    "520",
+    "550",
+    "570",
+    "600",
+    "620",
+    "650"
+  ];
+
+  const sheetNames = Object.keys(tableData.sheets).sort(function (a, b) {
+    const indexA = sheetOrder.indexOf(a);
+    const indexB = sheetOrder.indexOf(b);
+
+    if (indexA === -1 && indexB === -1) {
+      return a.localeCompare(b);
+    }
+
+    if (indexA === -1) {
+      return 1;
+    }
+
+    if (indexB === -1) {
+      return -1;
+    }
+
+    return indexA - indexB;
+  });
+
+  let html = "";
+
+  sheetNames.forEach(function (sheetName) {
+    html += `
+      <option value="${escapeHtml(sheetName)}">
+        ${escapeHtml(sheetName)}
+      </option>
+    `;
+  });
+
+  sheetSelect.innerHTML = html;
+
+  if (sheetNames.includes("018#1")) {
+    sheetSelect.value = "018#1";
+  }
+}

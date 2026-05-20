@@ -1,7 +1,7 @@
 # convert_excel.py
 # 功能：
-# 1. 讀取 Excel 的 018#1 工作表
-# 2. 抓出 Excel 上方製程總數
+# 1. 讀取 Excel 多個工作表
+# 2. 抓出每個分頁的表頭
 # 3. 抓出每筆製令的製程數量
 # 4. 輸出 data/inventory_demo.json 給前端使用
 
@@ -14,8 +14,25 @@ BASE_DIR = Path(__file__).parent
 EXCEL_FILE = BASE_DIR / "excel" / "30-4118-018-XXX.xlsm"
 OUTPUT_FILE = BASE_DIR / "data" / "inventory_demo.json"
 
-TARGET_SHEET = "018#1"
-
+# 要轉出的 Excel 分頁
+TARGET_SHEETS = [
+    "018#1",
+    "4XX",
+    "5XX",
+    "6XX",
+    "370",
+    "400",
+    "420",
+    "450",
+    "470",
+    "500",
+    "520",
+    "550",
+    "570",
+    "600",
+    "620",
+    "650",
+]
 
 COLUMNS = [
     {"key": "date", "label": "來料日期", "keywords": ["來料日期"], "type": "text"},
@@ -63,6 +80,66 @@ COLUMNS = [
         "type": "number",
     },
     {
+        "key": "process_3_qty",
+        "label": "#3未加工",
+        "keywords": ["#3未加工", "#03未加工"],
+        "type": "number",
+    },
+    {
+        "key": "process_3_ng",
+        "label": "#3 NG",
+        "keywords": ["#3NG", "#3 NG", "#03NG", "#03 NG"],
+        "type": "number",
+    },
+    {
+        "key": "process_4_qty",
+        "label": "#4未加工",
+        "keywords": ["#4未加工", "#04未加工"],
+        "type": "number",
+    },
+    {
+        "key": "process_4_ng",
+        "label": "#4 NG",
+        "keywords": ["#4NG", "#4 NG", "#04NG", "#04 NG"],
+        "type": "number",
+    },
+    {
+        "key": "process_5_qty",
+        "label": "#5未加工",
+        "keywords": ["#5未加工", "#05未加工"],
+        "type": "number",
+    },
+    {
+        "key": "process_5_ng",
+        "label": "#5 NG",
+        "keywords": ["#5NG", "#5 NG", "#05NG", "#05 NG"],
+        "type": "number",
+    },
+    {
+        "key": "process_6_qty",
+        "label": "#6未加工",
+        "keywords": ["#6未加工", "#06未加工"],
+        "type": "number",
+    },
+    {
+        "key": "process_6_ng",
+        "label": "#6 NG",
+        "keywords": ["#6NG", "#6 NG", "#06NG", "#06 NG"],
+        "type": "number",
+    },
+    {
+        "key": "process_7_qty",
+        "label": "#7未加工",
+        "keywords": ["#7未加工", "#07未加工"],
+        "type": "number",
+    },
+    {
+        "key": "process_7_ng",
+        "label": "#7 NG",
+        "keywords": ["#7NG", "#7 NG", "#07NG", "#07 NG"],
+        "type": "number",
+    },
+    {
         "key": "wait_qc_01",
         "label": "#01待檢驗",
         "keywords": ["#01待檢驗"],
@@ -80,17 +157,52 @@ COLUMNS = [
         "keywords": ["#02待委外數量"],
         "type": "number",
     },
-    {"key": "vendor", "label": "#02廠商", "keywords": ["#02廠商"], "type": "text"},
+    {
+        "key": "vendor",
+        "label": "#02廠商",
+        "keywords": ["#02廠商", "廠商"],
+        "type": "text",
+    },
     {
         "key": "outsource_wait_return_qty",
         "label": "#02待回數量",
-        "keywords": ["#02待回數量"],
+        "keywords": ["#02待回數量", "待回數量"],
         "type": "number",
     },
     {
         "key": "outsource_ng",
         "label": "#02委外NG",
-        "keywords": ["#02委外NG"],
+        "keywords": ["#02委外NG", "委外NG"],
+        "type": "number",
+    },
+    {
+        "key": "wait_outsource_08_qty",
+        "label": "#08待委外數量",
+        "keywords": ["#08待委外數量", "#8待委外數量"],
+        "type": "number",
+    },
+    {
+        "key": "outsource_08_done_qty",
+        "label": "#08已委外數量",
+        "keywords": ["#08已委外數量", "#8已委外數量"],
+        "type": "number",
+    },
+    {
+        "key": "vendor_08",
+        "label": "#08廠商",
+        "keywords": ["#08廠商", "#8廠商"],
+        "type": "text",
+    },
+    {
+        "key": "outsource_08_wait_return_qty",
+        "label": "#08待回數量",
+        "keywords": ["#08待回數量", "#8待回數量"],
+        "type": "number",
+    },
+    {
+        "key": "outsource_08_ng",
+        "label": "#08委外NG",
+        "keywords": ["#08委外NG", "#8委外NG"],
         "type": "number",
     },
     {
@@ -106,9 +218,33 @@ COLUMNS = [
         "type": "number",
     },
     {
+        "key": "wait_qc_06",
+        "label": "#06待檢驗數量",
+        "keywords": ["#06待檢驗數量", "#6待檢驗數量"],
+        "type": "number",
+    },
+    {
+        "key": "finished_wait_qc",
+        "label": "成品待檢驗",
+        "keywords": ["成品待檢驗"],
+        "type": "number",
+    },
+    {
         "key": "not_stock_in_qty",
         "label": "未入庫數量",
-        "keywords": ["未入庫數量"],
+        "keywords": ["未入庫數量", "未入庫"],
+        "type": "number",
+    },
+    {
+        "key": "stock_in_qty",
+        "label": "入庫數量",
+        "keywords": ["入庫數量", "入庫"],
+        "type": "number",
+    },
+    {
+        "key": "shipped_qty",
+        "label": "已出貨數量",
+        "keywords": ["已出貨數量", "已出貨"],
         "type": "number",
     },
     {
@@ -119,28 +255,6 @@ COLUMNS = [
     },
     {"key": "bad_qty", "label": "總不良數", "keywords": ["總不良數"], "type": "number"},
     {"key": "yield_rate", "label": "直通率", "keywords": ["直通率"], "type": "number"},
-]
-
-
-HEADER_GROUPS = [
-    {"title": "115年度", "colspan": 1, "className": "group-year"},
-    {
-        "title": "素材廠：淳梓（自購料）\n30-4118-018-XXX#1\n定容定量：小籃168pcs",
-        "colspan": 1,
-        "className": "group-material",
-    },
-    {"title": "總來料數", "colspan": 1, "className": "group-total"},
-    {"title": "品管進料檢驗", "colspan": 1, "className": "group-qc"},
-    {"title": "發料\n168/籃", "colspan": 1, "className": "group-issue"},
-    {"title": "車床--粗車", "colspan": 2, "className": "group-process"},
-    {"title": "車床", "colspan": 2, "className": "group-process"},
-    {"title": "外觀檢驗", "colspan": 2, "className": "group-qc"},
-    {"title": "委外－俊杰 Y003 頭部拋磨", "colspan": 4, "className": "group-outsource"},
-    {"title": "品管檢驗", "colspan": 2, "className": "group-qc"},
-    {"title": "尚未入庫", "colspan": 1, "className": "group-stock"},
-    {"title": "尚未分料", "colspan": 1, "className": "group-stock"},
-    {"title": "總不良數量", "colspan": 1, "className": "group-ng"},
-    {"title": "直通率", "colspan": 1, "className": "group-rate"},
 ]
 
 
@@ -171,11 +285,24 @@ def normalize_text(value):
 
 
 def find_header_row(sheet):
-    for row_index in range(1, min(sheet.max_row, 30) + 1):
+    for row_index in range(1, min(sheet.max_row, 40) + 1):
         row_values = [normalize_text(cell.value) for cell in sheet[row_index]]
-        row_text = " ".join(row_values)
+        row_text = "".join(row_values)
 
-        if "來料日期" in row_text and "製令單號" in row_text and "入料數" in row_text:
+        # 最基本一定要有製令單號
+        if "製令單號" not in row_text:
+            continue
+
+        # 再看有沒有任一種數量欄位
+        has_qty_column = (
+            "未加工" in row_text
+            or "待回數量" in row_text
+            or "未入庫" in row_text
+            or "入料數" in row_text
+            or "總不良數" in row_text
+        )
+
+        if has_qty_column:
             return row_index
 
     return None
@@ -218,77 +345,18 @@ def get_cell_value(sheet, row_index, column_map, col_def):
     return safe_number(value)
 
 
-def find_summary_row(sheet, header_row, column_map):
-    """
-    找 Excel 上方總數列。
-    邏輯：表頭上方幾列，哪一列數字最多，就當總數列。
-    """
-
-    best_row = None
-    best_score = -1
-
-    start_row = max(1, header_row - 5)
-    end_row = header_row - 1
-
-    for row_index in range(start_row, end_row + 1):
-        score = 0
-
-        for col_def in COLUMNS:
-            if col_def["type"] != "number":
-                continue
-
-            col_index = column_map.get(col_def["key"])
-
-            if not col_index:
-                continue
-
-            value = sheet.cell(row=row_index, column=col_index).value
-
-            if safe_number(value) != 0:
-                score += 1
-
-        if score > best_score:
-            best_score = score
-            best_row = row_index
-
-    return best_row
-
-
-def build_summary(sheet, summary_row, column_map):
-    summary = {}
-
-    for col_def in COLUMNS:
-        if col_def["type"] != "number":
-            continue
-
-        summary[col_def["key"]] = get_cell_value(
-            sheet, summary_row, column_map, col_def
-        )
-
-    return summary
-
-
 def build_rows(sheet, header_row, column_map):
     rows = []
 
     for row_index in range(header_row + 1, sheet.max_row + 1):
         work_order_col = column_map.get("work_order")
-        input_qty_col = column_map.get("input_qty")
 
-        work_order = ""
-        input_qty = 0
+        if not work_order_col:
+            continue
 
-        if work_order_col:
-            work_order = safe_text(
-                sheet.cell(row=row_index, column=work_order_col).value
-            )
+        work_order = safe_text(sheet.cell(row=row_index, column=work_order_col).value)
 
-        if input_qty_col:
-            input_qty = safe_number(
-                sheet.cell(row=row_index, column=input_qty_col).value
-            )
-
-        if not work_order and input_qty == 0:
+        if not work_order:
             continue
 
         row_data = {}
@@ -303,6 +371,36 @@ def build_rows(sheet, header_row, column_map):
     return rows
 
 
+def convert_sheet(workbook, sheet_name):
+    if sheet_name not in workbook.sheetnames:
+        print(f"略過，找不到工作表：{sheet_name}")
+        return None
+
+    sheet = workbook[sheet_name]
+
+    header_row = find_header_row(sheet)
+
+    if not header_row:
+        print(f"略過，找不到表頭列：{sheet_name}")
+        return None
+
+    column_map = build_column_map(sheet, header_row)
+    rows = build_rows(sheet, header_row, column_map)
+
+    print(f"工作表：{sheet_name}")
+    print(f"表頭列：{header_row}")
+    print(f"欄位數：{len(column_map)}")
+    print(f"資料筆數：{len(rows)}")
+    print("-" * 30)
+
+    return {
+        "sheet_name": sheet_name,
+        "header_row": header_row,
+        "column_map": column_map,
+        "rows": rows,
+    }
+
+
 def convert_excel_to_json():
     if not EXCEL_FILE.exists():
         print(f"找不到 Excel 檔案：{EXCEL_FILE}")
@@ -310,32 +408,17 @@ def convert_excel_to_json():
 
     workbook = load_workbook(EXCEL_FILE, data_only=True, read_only=True)
 
-    if TARGET_SHEET not in workbook.sheetnames:
-        print(f"找不到工作表：{TARGET_SHEET}")
-        return
+    sheets_data = {}
 
-    sheet = workbook[TARGET_SHEET]
+    for sheet_name in TARGET_SHEETS:
+        sheet_data = convert_sheet(workbook, sheet_name)
 
-    header_row = find_header_row(sheet)
-
-    if not header_row:
-        print("找不到表頭列")
-        return
-
-    column_map = build_column_map(sheet, header_row)
-
-    summary_row = find_summary_row(sheet, header_row, column_map)
-
-    summary = build_summary(sheet, summary_row, column_map)
-
-    rows = build_rows(sheet, header_row, column_map)
+        if sheet_data:
+            sheets_data[sheet_name] = sheet_data
 
     output_data = {
-        "sheet_name": TARGET_SHEET,
-        "header_groups": HEADER_GROUPS,
-        "columns": COLUMNS,
-        "summary": summary,
-        "rows": rows,
+        "source_file": EXCEL_FILE.name,
+        "sheets": sheets_data,
     }
 
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -343,11 +426,8 @@ def convert_excel_to_json():
     with open(OUTPUT_FILE, "w", encoding="utf-8") as file:
         json.dump(output_data, file, ensure_ascii=False, indent=2)
 
-    print(f"工作表：{TARGET_SHEET}")
-    print(f"表頭列：{header_row}")
-    print(f"總數列：{summary_row}")
-    print(f"資料筆數：{len(rows)}")
-    print(f"輸出檔案：{OUTPUT_FILE}")
+    print(f"輸出完成：{OUTPUT_FILE}")
+    print(f"成功轉出分頁數：{len(sheets_data)}")
 
 
 if __name__ == "__main__":
