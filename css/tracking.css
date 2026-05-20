@@ -390,6 +390,34 @@ body {
     background: #0f172a;
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: #1e293b;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.nav-btn:hover {
+    background: #0f172a;
+}
+
+.secondary-btn {
+    background: #2563eb;
+}
+
+.secondary-btn:hover {
+    background: #1d4ed8;
+}
 
 /* 手機版 */
 @media (max-width: 700px) {
