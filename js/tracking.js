@@ -578,6 +578,9 @@ function escapeHtml(value) {
 
 
 sheetSelect.addEventListener("change", renderPage);
+searchWorkOrder.addEventListener("input", renderPage);
+columnMode.addEventListener("change", renderPage);
+sheetSelect.addEventListener("change", renderPage);
 resetBtn.addEventListener("click", function () {
   searchWorkOrder.value = "";
   columnMode.value = "all";
