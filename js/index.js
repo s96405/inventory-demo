@@ -247,24 +247,32 @@ function getVisibleColumns(rows) {
 
   if (mode === "remain") {
   return FRONTEND_COLUMNS.filter(function (column) {
+    // 固定欄位：來料日期、製令單號
     if (column.fixed) {
       return true;
     }
 
+    // 保留廠商欄位
     if (column.key === "vendor") {
       return true;
     }
 
+    // NG 欄位不要顯示
     if (column.ng) {
       return false;
     }
 
-    const isRemainColumn = column.label.includes("未加工");
+    // 顯示：未加工數量、廠商待回數量、未入庫數量
+    const isRemainColumn =
+      column.label.includes("未加工") ||
+      column.label.includes("待回數量") ||
+      column.label.includes("未入庫數量");
 
     if (!isRemainColumn) {
       return false;
     }
 
+    // 只有目前查詢結果裡，有數量的欄位才顯示
     return rows.some(function (row) {
       return Number(row[column.key]) > 0;
     });
