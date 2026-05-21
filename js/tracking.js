@@ -233,9 +233,18 @@ function renderPage() {
   renderExcelBody(filteredRows, visibleColumns);
 }
 
+function toNumber(value) {
+  if (value === null || value === undefined || value === "") {
+    return 0;
+  }
+
+  return Number(String(value).replaceAll(",", "")) || 0;
+}
+
 function getFilteredRows() {
   const keyword = searchWorkOrder.value.trim().toLowerCase();
   const sheetName = sheetSelect.value;
+  const mode = columnMode.value;
 
   const currentSheet = tableData.sheets?.[sheetName] || {};
   const rows = currentSheet.rows || [];
@@ -243,9 +252,53 @@ function getFilteredRows() {
   return rows.filter(function (row) {
     const workOrder = String(row.work_order || "").toLowerCase();
 
-    return workOrder.includes(keyword);
+    // 製令單號搜尋
+    if (!workOrder.includes(keyword)) {
+      return false;
+    }
+
+    // 未加工 / 餘料模式：
+    // 只要除了入料數、NG、直通率以外，有任何數量 > 0，就顯示這列
+    if (mode === "remain") {
+      return FRONTEND_COLUMNS.some(function (column) {
+        return isRemainQtyColumn(column) && toNumber(row[column.key]) > 0;
+      });
+    }
+
+    return true;
   });
 }
+
+function isRemainQtyColumn(column) {
+  // 固定欄位：來料日期、製令單號，不拿來判斷
+  if (column.fixed) {
+    return false;
+  }
+
+  // 入料數不算未完成
+  if (column.key === "input_qty") {
+    return false;
+  }
+
+  // 廠商是文字欄位，不拿來判斷數量
+  if (column.key === "vendor") {
+    return false;
+  }
+
+  // NG 不算未完成
+  if (column.ng) {
+    return false;
+  }
+
+  // 直通率不算未完成
+  if (column.key === "yield_rate") {
+    return false;
+  }
+
+  // 剩下的數量欄位都算未完成
+  return column.type === "number";
+}
+
 function getVisibleColumns(rows) {
   const mode = columnMode.value;
 
@@ -254,35 +307,30 @@ function getVisibleColumns(rows) {
   }
 
   if (mode === "remain") {
+  // 只要目前資料裡 #02待回數量 有任何一筆 > 0，才顯示廠商欄位
+  const hasOutsourceWaitReturn = rows.some(function (row) {
+    return toNumber(row.outsource_wait_return_qty) > 0;
+  });
+
   return FRONTEND_COLUMNS.filter(function (column) {
     // 固定欄位：來料日期、製令單號
     if (column.fixed) {
       return true;
     }
 
-    // 保留廠商欄位
+    // 廠商欄位：#02待回數量全部是 0 就不顯示
     if (column.key === "vendor") {
-      return true;
+      return hasOutsourceWaitReturn;
     }
 
-    // NG 欄位不要顯示
-    if (column.ng) {
+    // 不是未完成數量欄位就不顯示
+    if (!isRemainQtyColumn(column)) {
       return false;
     }
 
-    // 顯示：未加工數量、廠商待回數量、未入庫數量
-    const isRemainColumn =
-      column.label.includes("未加工") ||
-      column.label.includes("待回數量") ||
-      column.label.includes("未入庫數量");
-
-    if (!isRemainColumn) {
-      return false;
-    }
-
-    // 只有目前查詢結果裡，有數量的欄位才顯示
+    // 這個欄位在目前資料裡有數量 > 0 才顯示
     return rows.some(function (row) {
-      return Number(row[column.key]) > 0;
+      return toNumber(row[column.key]) > 0;
     });
   });
 }
@@ -455,7 +503,7 @@ function renderExcelBody(rows, columns) {
       if (
         columnMode.value === "remain" &&
         column.type === "number" &&
-        Number(value) > 0
+        toNumber(value) > 0
         ) {
         className += " has-qty";
         }
